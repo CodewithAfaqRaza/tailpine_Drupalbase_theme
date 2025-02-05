@@ -119,14 +119,14 @@
         </ul>
 
         <!-- Register and Login Buttons -->
-        <div class="all_menu_buttons hidden lg:flex gap-6 items-center">
+        <div class="all_menu_buttons flex gap-6 items-center">
           <button
-            class="bg-black text-lg tracking-tighter whitespace-nowrap px-10 border-none rounded py-2 text-white"
+            class="bg-black text-lg hidden lg:flex tracking-tighter whitespace-nowrap px-10 border-none rounded py-2 text-white"
           >
             Register
           </button>
           <button
-            class="bg-black text-lg tracking-tighter whitespace-nowrap px-10 border-none rounded py-2 text-white"
+            class="bg-black text-lg hidden lg:flex tracking-tighter whitespace-nowrap px-10 border-none rounded py-2 text-white"
           >
             Login
           </button>
@@ -153,144 +153,119 @@
                 :class="{ '-rotate-45 -translate-y-3': open }"
               ></div>
             </button>
+            <div
+              class="xl:hidden absolute top-24 left-0 right-0 w-full border-t border-[1px] border-gray-800 h-screen bg-white transition-all duration-300 ease-in-out"
+              :class="open ? 'block w-full transition-all duration-300 ease-in-out' : 'hidden '"
+              @click="open = false"
+            >
+              <ul
+                class="menu primary-nav__menu primary-nav__menu--level-1 flex flex-col items-start pt-5"
+                data-drupal-selector="primary-nav-menu--level-1"
+              >
+                <li
+                  class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-1 whitespace-nowrap font-medium px-10 py-2 border-b w-full border-gray-900 hover:bg-gray-900 hover:text-white hover:rounded-lg hover:transition-all hover:duration-500"
+                >
+                  <a
+                    href="/"
+                    class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-1"
+                    data-drupal-selector="primary-nav-menu-link-has-children"
+                    data-drupal-link-system-path="&lt;front&gt;"
+                  >
+                    <span
+                      class="primary-nav__menu-link-inner primary-nav__menu-link-inner--level-1"
+                      >Home</span
+                    >
+                  </a>
+                </li>
+                <li
+                  class="relative w-full xl:w-fit flex items-start border-b border-gray-900 px-10 rounded justify-between flex-col"
+                  @click="dropdownOpen = !dropdownOpen"
+                  @mouseenter="dropdownOpen = true"
+                  @mouseleave="dropdownOpen = false"
+                >
+                  <button
+                    class="font-medium px-4 py-2 w-full md:w-full whitespace-nowrap rounded hover:bg-gray-900 hover:text-white flex items-center justify-between transition-all duration-300 ease-in-out"
+                  >
+                    About
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-5 h-5 ml-2 transform transition-transform duration-300 ease-in-out"
+                      :class="dropdownOpen ? 'rotate-180' : 'rotate-0'"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+
+                  <!-- Sub Menu -->
+                  <ul
+                    class="mt-1 w-full bg-white text-black border border-gray-200 rounded-lg shadow-lg z-10 transition-all duration-300 ease-in-out"
+                    :class="dropdownOpen ? 'flex flex-col gap-1' : 'hidden'"
+                  >
+                    <li class="whitespace-nowrap border-b border-gray-900">
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-900 hover:text-white"
+                        >Menu Link 1</a
+                      >
+                    </li>
+                    <li class="whitespace-nowrap border-b border-gray-900">
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-900 hover:text-white"
+                        >Menu Link 2</a
+                      >
+                    </li>
+                    <li class="whitespace-nowrap border-b border-gray-900">
+                      <a
+                        href="#"
+                        class="block px-4 py-2 hover:bg-gray-900 hover:text-white"
+                        >Menu Link 3</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-1 whitespace-nowrap font-medium py-2 border-b px-10 border-gray-900 w-full hover:bg-gray-900 hover:text-white hover:rounded-lg hover:transition-all hover:duration-500"
+                >
+                  <a
+                    href=""
+                    class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-1"
+                    data-drupal-selector="primary-nav-menu-link-has-children"
+                  >
+                    <span
+                      class="primary-nav__menu-link-inner primary-nav__menu-link-inner--level-1"
+                      >Blog</span
+                    >
+                  </a>
+                </li>
+                <div
+                  class="all_menu_buttons px-10 flex flex-col sm:flex-row justify-between w-full lg:hidden gap-6 items-center"
+                >
+                  <button
+                    class="bg-black cursor-pointer w-full text-lg tracking-tighter whitespace-nowrap px-10 border-none rounded py-2 text-white"
+                  >
+                    Register
+                  </button>
+                  <button
+                    class="bg-black cursor-pointer w-full text-lg tracking-tighter whitespace-nowrap px-10 border-none rounded py-2 text-white"
+                  >
+                    Login
+                  </button>
+                </div>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <!-- Menu Icon for Mobile -->
-        <div class="menu_icon flex lg:hidden" x-data="{ open: false }">
-          <button
-            class="h-6 rounded-lg flex items-center justify-between flex-col gap-0.5"
-            @click="open = !open"
-          >
-            <!-- Top Line -->
-            <div
-              class="topLine w-8 h-1 bg-black transition-transform duration-300"
-              :class="{ 'rotate-45 translate-y-2': open }"
-            ></div>
-
-            <!-- Middle Line -->
-            <div
-              class="midLine w-8 h-1 bg-black transition-opacity duration-300"
-              :class="{ 'opacity-0': open }"
-            ></div>
-
-            <!-- Bottom Line -->
-            <div
-              class="bottomLine w-8 h-1 bg-black transition-transform duration-300"
-              :class="{ '-rotate-45 -translate-y-3': open }"
-            ></div>
-          </button>
-        </div>
-
         <!-- Mobile Dropdown Menu -->
-        <div
-          class="xl:hidden absolute top-24 left-0 right-0 w-full h-screen bg-amber-400 transition-all duration-300 ease-in-out"
-          @click="open = false"
-        >
-          <ul
-            class="menu primary-nav__menu primary-nav__menu--level-1 flex flex-col items-start gap-8 pt-10"
-            data-drupal-selector="primary-nav-menu--level-1"
-          >
-            <li
-              class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-1 whitespace-nowrap font-medium px-10 py-2 border-b w-full border-gray-900 hover:bg-gray-900 hover:text-white hover:rounded-lg hover:transition-all hover:duration-500"
-            >
-              <a
-                href="/"
-                class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-1"
-                data-drupal-selector="primary-nav-menu-link-has-children"
-                data-drupal-link-system-path="&lt;front&gt;"
-              >
-                <span
-                  class="primary-nav__menu-link-inner primary-nav__menu-link-inner--level-1"
-                  >Home</span
-                >
-              </a>
-            </li>
-            <li
-              class="relative w-full px-6 xl:w-fit flex items-start border-b border-gray-900px-10 rounded justify-between flex-col"
-              @click="dropdownOpen = !dropdownOpen"
-              @mouseenter="dropdownOpen = true"
-              @mouseleave="dropdownOpen = false"
-            >
-              <button
-                class="font-medium px-4 py-2 w-full md:w-full whitespace-nowrap rounded hover:bg-gray-900 hover:text-white flex items-center justify-between transition-all duration-300 ease-in-out"
-              >
-                About
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5 ml-2 transform transition-transform duration-300 ease-in-out"
-                  :class="dropdownOpen ? 'rotate-180' : 'rotate-0'"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-
-              <!-- Sub Menu -->
-              <ul
-                class="mt-1 w-full bg-white text-black border border-gray-200 rounded-lg shadow-lg z-10 transition-all duration-300 ease-in-out"
-                :class="dropdownOpen ? 'flex flex-col gap-1' : 'hidden'"
-              >
-                <li class="whitespace-nowrap border-b border-gray-900">
-                  <a
-                    href="#"
-                    class="block px-4 py-2 hover:bg-gray-900 hover:text-white"
-                    >Menu Link 1</a
-                  >
-                </li>
-                <li class="whitespace-nowrap border-b border-gray-900">
-                  <a
-                    href="#"
-                    class="block px-4 py-2 hover:bg-gray-900 hover:text-white"
-                    >Menu Link 2</a
-                  >
-                </li>
-                <li class="whitespace-nowrap border-b border-gray-900">
-                  <a
-                    href="#"
-                    class="block px-4 py-2 hover:bg-gray-900 hover:text-white"
-                    >Menu Link 3</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li
-              class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-1 whitespace-nowrap font-medium py-2 border-b px-10 border-gray-900 w-full hover:bg-gray-900 hover:text-white hover:rounded-lg hover:transition-all hover:duration-500"
-            >
-              <a
-                href=""
-                class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-1"
-                data-drupal-selector="primary-nav-menu-link-has-children"
-              >
-                <span
-                  class="primary-nav__menu-link-inner primary-nav__menu-link-inner--level-1"
-                  >Blog</span
-                >
-              </a>
-            </li>
-            <div
-              class="all_menu_buttons px-10 flex flex-col sm:flex-row justify-between w-full lg:hidden gap-6 items-center"
-            >
-              <button
-                class="bg-black cursor-pointer w-full text-lg tracking-tighter whitespace-nowrap px-10 border-none rounded py-2 text-white"
-              >
-                Register
-              </button>
-              <button
-                class="bg-black cursor-pointer w-full text-lg tracking-tighter whitespace-nowrap px-10 border-none rounded py-2 text-white"
-              >
-                Login
-              </button>
-            </div>
-          </ul>
-        </div>
       </nav>
     </div>
   </body>
