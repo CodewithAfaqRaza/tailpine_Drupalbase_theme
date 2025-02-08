@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <style>
+      [aria-expanded="false"] {
+        display: none;
+      }
+      [aria-expanded="true"] {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container w-full">
+      <header class="bg-gray-800 text-white">
+        <nav>
+          <ul class="menu flex items-center justify-evenly py-6">
+            <li class="bg-black px-5 py-2 rounded relative">
+              <a href="#products">Products</a>
+              <div
+                id="products"
+                class="flex flex-wrap justify-between p-5 gap-10 absolute top-12 left-0 right-0 w-96 bg-gray-900"
+                aria-expanded="false"
+              >
+                <ul class="flex items-center flex-col gap-5">
+                  <li><a href="#" class="list-link">Link</a></li>
+                  <li><a href="#" class="list-link">Link</a></li>
+                  <li><a href="#" class="list-link">Link</a></li>
+                </ul>
+                <ul class="flex items-center flex-col gap-5">
+                  <li><a href="#" class="list-link">Link</a></li>
+                  <li><a href="#" class="list-link">Link</a></li>
+                  <li><a href="#" class="list-link">Link</a></li>
+                </ul>
+                <ul class="flex items-center flex-col gap-5">
+                  <li><a href="#" class="list-link">Link</a></li>
+                  <li><a href="#" class="list-link">Link</a></li>
+                  <li><a href="#" class="list-link">Link</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bg-black px-5 py-2 rounded">
+              <a href="product">Services</a>
+            </li>
+            <li class="bg-black px-5 py-2 rounded">
+              <a href="product">About</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+  </body>
+  <script>
+    let megaMenu = document.querySelectorAll('nav a[href^="#"]');
+    megaMenu.forEach(function (item) {
+      item.addEventListener("click", handleClick);
+    });
+
+    function handleClick(e) {
+      e.preventDefault();
+      var target = document.querySelector(`${e.target.getAttribute("href")}`);
+      if (target.getAttribute("aria-expanded") === "true") {
+        target.setAttribute("aria-expanded", "false");
+      } else {
+        target.setAttribute("aria-expanded", "true");
+      }
+
+      lastFocusedElement = document.activeElement;
+      var focusableElement = target.querySelectorAll("a");
+
+      firstTabStop = focusableElement[0];
+      lastFocusedElement = focusableElement[focusableElement.length - 1];
+      firstTabStop.focus();
+      var targets = target.querySelectorAll("a");
+
+      // Attach event listeners for keyup on each anchor inside the submenu
+      for (i = 0; i < targets.length; i++) {
+        targets[i].addEventListener("keyup", handleKeyPress);
+      }
+    }
+
+    function handleKeyPress(e) {
+      if (e.keyCode === 9 && !e.shiftKey) {
+        if (document.activeElement === lastTabStop) {
+          e.preventDefault();
+          firstTabStop.focus();
+        }
+      }
+
+      if (e.keyCode === 9 && e.shiftKey) {
+        if (document.activeElement === firstTabStop) {
+          e.preventDefault();
+          lastTabStop.focus();
+        }
+      }
+
+      // Hide the submenu when ESC key is pressed
+      if (e.keyCode === 27) {
+        // Close the submenu by setting aria-expanded to false
+        e.target
+          .closest("[aria-expanded]")
+          .setAttribute("aria-expanded", "false");
+        lastFocusedElement.focus(); // Return focus to the last focused element
+      }
+    }
+
+    var lastFocusedElement;
+    var firstTabStop;
+    var lastTabStop;
+  </script>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../output.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body>
+    <div class="container max-w-[1920px] w-full">
+      <section
+        x-data="{ mobileNavOpen: false }"
+        class="overflow-hidden shadow-lg shadow-gray-500"
+      >
+        <!-- Dark gray background -->
+        <nav class="mx-4 py-6">
+          <div class="container mx-auto px-4">
+            <div class="relative flex items-center justify-between">
+              <div class="flex items-center gap-10">
+                <a href="#" class="inline-block">
+                  <img class="text-white h-5 md:h-8" src="ALogo.svg" alt="" />
+                </a>
+                <ul class="hidden lg:flex ml-10 gap-5 text-black">
+                  <li class="mr-8">
+                    <a
+                      class="inline-block hover:text-gray-700 font-medium"
+                      href="#"
+                      >About us</a
+                    >
+                  </li>
+                  <li class="mr-8">
+                    <a
+                      class="inline-block hover:text-gray-700 font-medium"
+                      href="#"
+                      >Team</a
+                    >
+                  </li>
+                  <li class="mr-8">
+                    <a
+                      class="inline-block hover:text-gray-700 font-medium"
+                      href="#"
+                      >Solutions</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="inline-block hover:text-gray-700 font-medium"
+                      href="#"
+                      >Blog</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="flex items-center justify-end">
+                <div class="hidden md:block">
+                  <a
+                    href="#"
+                    class="inline-flex py-2.5 px-4 mr-4 items-center justify-center text-sm font-medium hover:text-white border border-white hover:border-gray-300 hover:bg-gray-700 rounded-full transition duration-200"
+                    >Login</a
+                  >
+                  <a
+                    href="#"
+                    class="inline-flex py-2.5 px-4 items-center justify-center text-sm font-medium border border-gray-300 hover:border-white hover:text-white hover:bg-gray-700 rounded-full transition duration-200"
+                    >Get in touch</a
+                  >
+                </div>
+                <button
+                  x-on:click="mobileNavOpen = !mobileNavOpen"
+                  class="md:hidden text-black hover:text-gray-700"
+                >
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.19995 23.2H26.7999"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M5.19995 16H26.7999"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M5.19995 8.79999H26.7999"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <div
+          :class="{'block': mobileNavOpen, 'hidden': !mobileNavOpen}"
+          class="hidden fixed top-0 left-0 bottom-0 w-full xs:w-5/6 xs:max-w-md z-50"
+        >
+          <div
+            x-on:click="mobileNavOpen = !mobileNavOpen"
+            class="fixed inset-0 bg-black opacity-40"
+          ></div>
+          <nav
+            class="relative flex flex-col py-7 px-10 w-full h-full bg-white overflow-y-auto"
+          >
+            <div class="flex items-center justify-between">
+              <a href="#" class="inline-block">
+                <img class="text-white h-5 md:h-8" src="ALogo.svg" alt="" />
+              </a>
+              <div class="flex items-center">
+                <a
+                  href="#"
+                  class="inline-flex py-2.5 px-4 items-center justify-center text-sm font-medium text-gray-900 hover:text-white border border-gray-900 hover:bg-gray-900 rounded-full transition duration-200"
+                  >Login</a
+                >
+                <button
+                  x-on:click="mobileNavOpen = !mobileNavOpen"
+                  class="ml-6"
+                >
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.2 8.79999L8.80005 23.2M8.80005 8.79999L23.2 23.2"
+                      stroke="#1D1F1E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="pt-20 pb-12 mb-auto">
+              <ul class="flex-col">
+                <li class="mb-6">
+                  <a
+                    class="inline-block text-gray-900 hover:text-gray-500 font-medium"
+                    href="#"
+                    >About us</a
+                  >
+                </li>
+                <li class="mb-6">
+                  <a
+                    class="inline-block text-gray-900 hover:text-gray-500 font-medium"
+                    href="#"
+                    >Team</a
+                  >
+                </li>
+                <li class="mb-6">
+                  <a
+                    class="inline-block text-gray-900 hover:text-gray-500 font-medium"
+                    href="#"
+                    >Solutions</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="inline-block text-gray-900 hover:text-gray-500 font-medium"
+                    href="#"
+                    >Blog</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
