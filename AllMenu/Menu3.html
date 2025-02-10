@@ -16,7 +16,7 @@
         x-data="{ mobileNavOpen: false, dropdown: false }"
         class="relative text-gray-950 shadow-lg shadow-gray-300"
       >
-        <nav class="relative px-12 py-5">
+        <nav x-data="{dropdownOpen : false}" class="relative px-12 py-5">
           <div class="flex items-center justify-between">
             <a class="relative z-10 pr-4 lg:pr-0" href="#">
               <img class="h-5 md:h-8" src="ALogo.svg" alt="" />
@@ -24,99 +24,84 @@
             <ul
               class="hidden xl:absolute xl:top-1/2 xl:left-1/2 xl:transform xl:-translate-y-1/2 xl:-translate-x-1/2 xl:flex lg:justify-center gap-14"
             >
-              <li>
+              <li class="py-2">
                 <a
-                  x-on:mousemove="dropdown = false"
                   href="#"
                   class="text-lg hover:text-gray-900 font-medium transition duration-200"
-                  >Our features</a
+                  >Home</a
                 >
               </li>
-              <li>
+              <li class="py-2">
                 <a
-                  x-on:mousemove="dropdown = false"
                   href="#"
                   class="text-lg hover:text-gray-900 font-medium transition duration-200"
-                  >How to use?</a
+                  >Blog</a
                 >
               </li>
-              <li>
-                <a
-                  x-on:mouseleave="dropdown = true"
-                  x-on:click="dropdown = !dropdown"
-                  x-on:mouseenter="dropdown = true"
-                  href="#"
-                  :class="{'text-gray-600': dropdown}"
-                  class="flex items-center text-lg hover:text-gray-900 font-medium transition duration-200"
+
+              <li
+                class="relative w-full font-medium text-lg xl:w-fit flex items-start rounded justify-between flex-col"
+                @mouseenter="dropdownOpen = true"
+                @mouseleave="dropdownOpen = false"
+                @click="dropdownOpen = !dropdownOpen"
+              >
+                <button
+                  class="w-full py-2 md:w-auto whitespace-nowrap flex items-center justify-between transition-all duration-300 ease-in-out"
                 >
-                  <span class="mr-2.5">Use cases</span>
-                  <div :class="{'rotate-180': dropdown}" class="transform">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="13"
-                      height="13"
-                      viewBox="0 0 13 13"
-                      fill="none"
-                    >
-                      <g>
-                        <path
-                          d="M11.8098 3.51666C11.7362 3.43826 11.6487 3.37604 11.5523 3.33357C11.4559 3.2911 11.3525 3.26924 11.2481 3.26924C11.1436 3.26924 11.0402 3.2911 10.9438 3.33357C10.8474 3.37604 10.7599 3.43826 10.6864 3.51666L7.06305 7.34761C6.9895 7.42601 6.902 7.48824 6.8056 7.5307C6.70919 7.57317 6.60579 7.59503 6.50135 7.59503C6.39691 7.59503 6.29351 7.57317 6.19711 7.5307C6.1007 7.48824 6.0132 7.42601 5.93966 7.34761L2.31633 3.51666C2.24279 3.43826 2.15529 3.37604 2.05888 3.33357C1.96248 3.2911 1.85907 3.26924 1.75464 3.26924C1.6502 3.26924 1.5468 3.2911 1.45039 3.33357C1.35399 3.37604 1.26649 3.43826 1.19294 3.51666C1.0456 3.67338 0.962891 3.88538 0.962891 4.10636C0.962891 4.32734 1.0456 4.53934 1.19294 4.69606L4.82418 8.53537C5.26918 9.00529 5.87241 9.26924 6.50135 9.26924C7.13029 9.26924 7.73352 9.00529 8.17852 8.53537L11.8098 4.69606C11.9571 4.53934 12.0398 4.32734 12.0398 4.10636C12.0398 3.88538 11.9571 3.67338 11.8098 3.51666Z"
-                          fill="currentColor"
-                        ></path>
-                      </g>
-                      <defs>
-                        <clipPath>
-                          <rect
-                            width="12"
-                            height="12"
-                            fill="white"
-                            transform="translate(0.5 0.5)"
-                          ></rect>
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </div>
-                  <div
-                    :class="{'hidden': !dropdown}"
-                    x-on:mouseleave="dropdown = false"
-                    class="hidden absolute max-w-[300px] w-full z-40"
+                  About
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5 ml-2 transform transition-transform duration-300 ease-in-out"
+                    :class="dropdownOpen ? 'rotate-180' : 'rotate-0'"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                   >
-                    <ul
-                      class="text-black border font-bold border-gray-200 rounded-lg shadow-lg z-10 transition-all duration-300 ease-in-out"
-                      :class="dropdownOpen ? 'flex flex-col gap-1' : 'hidden '"
-                      style="transition-property: opacity, max-height"
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+
+                <!-- Sub Menu -->
+                <ul
+                  class="md:absolute left-0 top-8 mt-2 w-auto min-w-64 bg-white text-black border font-bold border-gray-200 rounded-lg shadow-lg z-10 transition-all duration-300 ease-in-out"
+                  :class="dropdownOpen ? 'flex flex-col gap-1' : 'hidden '"
+                  style="transition-property: opacity, max-height"
+                >
+                  <li class="whitespace-nowrap border-b border-gray-900">
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-900 hover:text-white"
+                      >Menu Link 1</a
                     >
-                      <li class="whitespace-nowrap border-b border-gray-900">
-                        <a
-                          href="#"
-                          class="block px-4 py-2 hover:bg-gray-900 hover:text-white"
-                          >Menu Link 1</a
-                        >
-                      </li>
-                      <li class="whitespace-nowrap border-b border-gray-900">
-                        <a
-                          href="#"
-                          class="block px-4 py-2 hover:bg-gray-900 hover:text-white"
-                          >Menu Link 2</a
-                        >
-                      </li>
-                      <li class="whitespace-nowrap border-b border-gray-900">
-                        <a
-                          href="#"
-                          class="block px-4 py-2 hover:bg-gray-900 hover:text-white"
-                          >Menu Link 3</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                </a>
+                  </li>
+                  <li class="whitespace-nowrap border-b border-gray-900">
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-900 hover:text-white"
+                      >Menu Link 2</a
+                    >
+                  </li>
+                  <li class="whitespace-nowrap border-b border-gray-900">
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-900 hover:text-white"
+                      >Menu Link 3</a
+                    >
+                  </li>
+                </ul>
               </li>
-              <li>
+
+              <li class="py-2">
                 <a
-                  x-on:mousemove="dropdown = false"
+                  x.mousemove=" dropdownOpen = false"
                   href="#"
                   class="text-lg hover:text-gray-900 font-medium transition duration-200"
-                  >Plans &amp; pricing</a
+                  >Contact Us</a
                 >
               </li>
             </ul>
@@ -143,12 +128,12 @@
                 </svg>
               </a>
               <a
-                class="inline-flex justify-center items-center text-center h-12 p-5 px-6 font-semibold hover:text-black focus:text-black bg-transparent focus:bg-gray-700 border border-gray-800 rounded-full focus:ring-4 focus:ring-white focus:ring-opacity-50 transition duration-200"
+                class="inline-flex justify-center items-center text-center h-12 p-5 px-6 font-semibold hover:text-gray-200 focus:text-black bg-gray-200 hover:bg-gray-900 focus:bg-gray-700 rounded-full focus:ring-4 focus:ring-white focus:ring-opacity-50 transition duration-200"
                 href="#"
                 >Login</a
               >
               <a
-                class="inline-flex justify-center items-center text-center h-12 p-5 px-6 font-semibold text-white hover:text-white focus:text-white bg-blue-500 hover:bg-blue-600 focus:bg-blue-600 rounded-full focus:ring-4 focus:ring-blue-200 transition duration-200"
+                class="inline-flex justify-center items-center text-center h-12 p-5 px-6 font-semibold text-gray-900 hover:text-gray-200 focus:text-gray-900 bg-gray-200 hover:bg-gray-800 focus:bg-gray-800 rounded-full focus:ring-4 focus:ring-blue-200 transition duration-200"
                 href="#"
                 >Get started</a
               >
@@ -182,12 +167,15 @@
           </div>
         </nav>
 
+        <!-- Mobile Navigation -->
         <div
-          :class="{'hidden': !mobileNavOpen}"
-          class="hidden fixed top-0 left-0 bottom-0 w-5/6 max-w-xs z-50"
+          x-show="mobileNavOpen"
+          x-on:click.away="mobileNavOpen = false"
+          class="fixed top-0 left-0 bottom-0 w-5/6 md:w-8/9 max-w-xs md:max-w-lg z-50"
+          style="display: none"
         >
           <div
-            x-on:click="mobileNavOpen = !mobileNavOpen"
+            x-on:click="mobileNavOpen = false"
             class="fixed inset-0 bg-black opacity-20"
           ></div>
           <nav class="relative p-8 w-full h-full bg-white">
@@ -219,53 +207,58 @@
                   <a
                     href="#"
                     class="text-lg text-black hover:text-gray-700 font-medium transition duration-200"
-                    >Our features</a
+                    >Home</a
                   >
                 </li>
                 <li>
                   <a
                     href="#"
                     class="text-lg text-black hover:text-gray-700 font-medium transition duration-200"
-                    >How to use?</a
+                    >Blog</a
                   >
                 </li>
                 <li class="relative">
                   <a
-                    x-on:mouseleave="dropdown = false"
-                    x-on:click="dropdown = false"
-                    x-on:mouseenter="dropdown = true"
+                    x-on:click="dropdown = !dropdown"
                     href="#"
-                    class="inline-flex w-full items-center relative text-lg text-black hover:text-gray-700 font-medium transition duration-200"
+                    class="flex w-full items-center relative text-lg text-black hover:text-gray-700 font-medium transition duration-200"
+                    role="button"
+                    tabindex="0"
+                    :aria-expanded="dropdown"
+                    aria-controls="mobile-dropdown-menu"
                   >
-                    <span class="mr-2.5">Use cases</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="13"
-                      height="13"
-                      viewBox="0 0 13 13"
-                      fill="none"
-                    >
-                      <g>
-                        <path
-                          d="M11.8098 3.51666C11.7362 3.43826 11.6487 3.37604 11.5523 3.33357C11.4559 3.2911 11.3525 3.26924 11.2481 3.26924C11.1436 3.26924 11.0402 3.2911 10.9438 3.33357C10.8474 3.37604 10.7599 3.43826 10.6864 3.51666L7.06305 7.34761C6.9895 7.42601 6.902 7.48824 6.8056 7.5307C6.70919 7.57317 6.60579 7.59503 6.50135 7.59503C6.39691 7.59503 6.29351 7.57317 6.19711 7.5307C6.1007 7.48824 6.0132 7.42601 5.93966 7.34761L2.31633 3.51666C2.24279 3.43826 2.15529 3.37604 2.05888 3.33357C1.96248 3.2911 1.85907 3.26924 1.75464 3.26924C1.6502 3.26924 1.5468 3.2911 1.45039 3.33357C1.35399 3.37604 1.26649 3.43826 1.19294 3.51666C1.0456 3.67338 0.962891 3.88538 0.962891 4.10636C0.962891 4.32734 1.0456 4.53934 1.19294 4.69606L4.82418 8.53537C5.26918 9.00529 5.87241 9.26924 6.50135 9.26924C7.13029 9.26924 7.73352 9.00529 8.17852 8.53537L11.8098 4.69606C11.9571 4.53934 12.0398 4.32734 12.0398 4.10636C12.0398 3.88538 11.9571 3.67338 11.8098 3.51666Z"
-                          fill="currentColor"
-                        ></path>
-                      </g>
-                      <defs>
-                        <clipPath>
-                          <rect
-                            width="12"
-                            height="12"
-                            fill="white"
-                            transform="translate(0.5 0.5)"
-                          ></rect>
-                        </clipPath>
-                      </defs>
-                    </svg>
+                    <div class="menu flex items-center justify-between w-full">
+                      <span class="mr-2.5">About</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="13"
+                        height="13"
+                        viewBox="0 0 13 13"
+                        fill="none"
+                      >
+                        <g>
+                          <path
+                            d="M11.8098 3.51666C11.7362 3.43826 11.6487 3.37604 11.5523 3.33357C11.4559 3.2911 11.3525 3.26924 11.2481 3.26924C11.1436 3.26924 11.0402 3.2911 10.9438 3.33357C10.8474 3.37604 10.7599 3.43826 10.6864 3.51666L7.06305 7.34761C6.9895 7.42601 6.902 7.48824 6.8056 7.5307C6.70919 7.57317 6.60579 7.59503 6.50135 7.59503C6.39691 7.59503 6.29351 7.57317 6.19711 7.5307C6.1007 7.48824 6.0132 7.42601 5.93966 7.34761L2.31633 3.51666C2.24279 3.43826 2.15529 3.37604 2.05888 3.33357C1.96248 3.2911 1.85907 3.26924 1.75464 3.26924C1.6502 3.26924 1.5468 3.2911 1.45039 3.33357C1.35399 3.37604 1.26649 3.43826 1.19294 3.51666C1.0456 3.67338 0.962891 3.88538 0.962891 4.10636C0.962891 4.32734 1.0456 4.53934 1.19294 4.69606L4.82418 8.53537C5.26918 9.00529 5.87241 9.26924 6.50135 9.26924C7.13029 9.26924 7.73352 9.00529 8.17852 8.53537L11.8098 4.69606C11.9571 4.53934 12.0398 4.32734 12.0398 4.10636C12.0398 3.88538 11.9571 3.67338 11.8098 3.51666Z"
+                            fill="currentColor"
+                          ></path>
+                        </g>
+                        <defs>
+                          <clipPath>
+                            <rect
+                              width="12"
+                              height="12"
+                              fill="white"
+                              transform="translate(0.5 0.5)"
+                            ></rect>
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+
                     <div
                       :class="{'hidden': !dropdown}"
                       x-on:mouseleave="dropdown = !dropdown"
-                      class="absolute left-0 top-0 max-w-[300px] w-full z-40"
+                      class="max-w-[300px] md:max-w-[450px] w-full z-40"
                     >
                       <ul
                         class="text-black border font-bold border-gray-200 rounded-lg shadow-lg transition-all duration-300 ease-in-out"
@@ -299,18 +292,18 @@
                   <a
                     href="#"
                     class="text-lg text-black hover:text-gray-700 font-medium transition duration-200"
-                    >Plans &amp; pricing</a
+                    >Contact Us</a
                   >
                 </li>
               </ul>
               <div class="flex flex-col items-center gap-2">
                 <a
-                  class="inline-flex justify-center items-center text-center w-full h-12 py-5 px-6 font-semibold text-black hover:text-black focus:text-black bg-transparent hover:bg-white focus:bg-white border border-gray-100 rounded-full focus:ring-4 focus:ring-white focus:ring-opacity-50 transition duration-200"
+                  class="inline-flex justify-center items-center text-center w-full p-5 px-6 font-semibold hover:text-gray-200 focus:text-black bg-gray-200 hover:bg-gray-900 focus:bg-gray-700 rounded-full focus:ring-4 focus:ring-white focus:ring-opacity-50 transition duration-200"
                   href="#"
                   >Login</a
                 >
                 <a
-                  class="inline-flex justify-center items-center text-center w-full h-12 py-5 px-6 font-semibold text-white hover:text-white focus:text-white bg-blue-500 hover:bg-blue-600 focus:bg-blue-600 rounded-full focus:ring-4 focus:ring-blue-200 transition duration-200"
+                  class="inline-flex justify-center items-center text-center w-full p-5 px-6 font-semibold text-gray-900 hover:text-gray-200 focus:text-gray-900 bg-gray-200 hover:bg-gray-800 focus:bg-gray-800 rounded-full focus:ring-4 focus:ring-blue-200 transition duration-200"
                   href="#"
                   >Get started</a
                 >
