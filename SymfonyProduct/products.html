@@ -11,24 +11,21 @@
     ></script>
   </head>
   <body>
-    <section
-      class="py-24 2xl:py-44 bg-gray-800"
-      x-data="{ activeSlide: 1, slideCount: 3 }"
-    >
-      <div class="container px-4 mx-auto">
+    <section class="bg-gray-200" x-data="{ activeSlide: 1, slideCount: 2 }">
+      <div class="container px-4 py-10 mx-auto">
         <h2
-          class="mb-14 xl:mb-24 text-9xl xl:text-10xl font-heading font-medium text-center text-white"
+          class="mb-14 xl:mb-24 text-5xl xl:text-7xl font-heading font-medium text-center text-gray-800"
         >
           Products
         </h2>
         <div class="flex items-center">
           <button
             x-on:click="activeSlide = activeSlide > 1 ? activeSlide - 1 : slideCount"
-            class="hidden md:block pr-6 hover:text-darkBlueGray-400 text-white"
+            class="hidden md:block pr-6 hover:text-darkBlueGray-400 text-gray-900"
           >
             <svg
-              width="8"
-              height="12"
+              width="24"
+              height="24"
               viewbox="0 0 8 12"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -46,14 +43,14 @@
               style="transform: translateX(-0%)"
             >
               <div class="inline-block w-full whitespace-normal">
-                <div class="flex flex-wrap -mx-0">
+                <div class="flex flex-wrap -mx-3">
                   <div class="w-full sm:w-1/2 xl:w-1/4 px-3 mb-14 xl:mb-0">
                     <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl"
+                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl shadow-lg"
                     >
                       <a class="block mx-auto max-w-max" href="#">
                         <img
-                          class="h-40 object-cover"
+                          class="h-40 w-full object-cover rounded-lg"
                           src="https://img.freepik.com/free-photo/modern-stationary-collection-arrangement_23-2149309643.jpg"
                           alt="Product 1"
                         />
@@ -61,24 +58,24 @@
                     </div>
                     <a href="#">
                       <p
-                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-white"
+                        class="mb-4 text-xl leading-8 font-heading font-bold hover:underline text-gray-900"
                       >
                         Product 1
                       </p>
                     </a>
                     <p
-                      class="text-xl text-blue-500 font-heading font-medium tracking-tighter"
+                      class="text-xl text-gray-900 font-heading font-extrabold tracking-tighter"
                     >
                       <span class="text-base pr-2">$</span><span>544.90</span>
                     </p>
                   </div>
                   <div class="w-full sm:w-1/2 xl:w-1/4 px-3 mb-14 xl:mb-0">
                     <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl"
+                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl shadow-lg"
                     >
                       <a class="block mx-auto max-w-max" href="#">
                         <img
-                          class="h-40 object-cover"
+                          class="h-40 w-full object-cover rounded-lg"
                           src="https://img.freepik.com/free-photo/modern-stationary-collection-arrangement_23-2149309643.jpg"
                           alt="Product 2"
                         />
@@ -86,24 +83,24 @@
                     </div>
                     <a href="#">
                       <p
-                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-white"
+                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-gray-900"
                       >
                         Product 2
                       </p>
                     </a>
                     <p
-                      class="text-xl text-blue-500 font-heading font-medium tracking-tighter"
+                      class="text-xl font-heading font-medium tracking-tighter"
                     >
                       <span class="text-base pr-2">$</span><span>44.90</span>
                     </p>
                   </div>
                   <div class="w-full sm:w-1/2 xl:w-1/4 px-3 mb-14 sm:mb-0">
                     <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl"
+                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl shadow-lg"
                     >
                       <a class="block mx-auto max-w-max" href="#">
                         <img
-                          class="h-40 object-cover"
+                          class="h-40 w-full object-cover rounded-lg"
                           src="https://i.pinimg.com/736x/ba/c1/6e/bac16e9df93c7eeff7ad9268bbb4ad1c.jpg"
                           alt="Product 3"
                         />
@@ -111,24 +108,24 @@
                     </div>
                     <a href="#">
                       <p
-                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-white"
+                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-gray-900"
                       >
                         Product 3
                       </p>
                     </a>
                     <p
-                      class="text-xl text-blue-500 font-heading font-medium tracking-tighter"
+                      class="text-xl font-heading font-medium tracking-tighter"
                     >
                       <span class="text-base pr-2">$</span><span>2090.59</span>
                     </p>
                   </div>
                   <div class="w-full sm:w-1/2 xl:w-1/4 px-3">
                     <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl"
+                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl shadow-lg"
                     >
                       <a class="block mx-auto max-w-max" href="#">
                         <img
-                          class="h-40 object-cover"
+                          class="h-40 w-full object-cover rounded-lg"
                           src="https://cdn.pixabay.com/photo/2016/03/27/07/12/apple-1282241_1280.jpg"
                           alt="Product 4"
                         />
@@ -136,13 +133,13 @@
                     </div>
                     <a href="#">
                       <p
-                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-white"
+                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-gray-900"
                       >
                         Product 4
                       </p>
                     </a>
                     <p
-                      class="text-xl text-blue-500 font-heading font-medium tracking-tighter"
+                      class="text-xl font-heading font-medium tracking-tighter"
                     >
                       <span class="text-base pr-2">$</span><span>120.90</span>
                     </p>
@@ -151,14 +148,14 @@
               </div>
 
               <div class="inline-block w-full whitespace-normal">
-                <div class="flex flex-wrap -mx-0">
+                <div class="flex flex-wrap -mx-3">
                   <div class="w-full sm:w-1/2 xl:w-1/4 px-3 mb-14 xl:mb-0">
                     <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl"
+                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl shadow-lg"
                     >
                       <a class="block mx-auto max-w-max" href="#">
                         <img
-                          class="h-40 object-cover"
+                          class="h-40 w-full object-cover rounded-lg"
                           src="https://img.freepik.com/free-photo/modern-stationary-collection-arrangement_23-2149309643.jpg"
                           alt="Product 1"
                         />
@@ -166,24 +163,24 @@
                     </div>
                     <a href="#">
                       <p
-                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-white"
+                        class="mb-4 text-xl leading-8 font-heading font-bold hover:underline text-gray-900"
                       >
                         Product 1
                       </p>
                     </a>
                     <p
-                      class="text-xl text-blue-500 font-heading font-medium tracking-tighter"
+                      class="text-xl text-gray-900 font-heading font-extrabold tracking-tighter"
                     >
                       <span class="text-base pr-2">$</span><span>544.90</span>
                     </p>
                   </div>
                   <div class="w-full sm:w-1/2 xl:w-1/4 px-3 mb-14 xl:mb-0">
                     <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl"
+                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl shadow-lg"
                     >
                       <a class="block mx-auto max-w-max" href="#">
                         <img
-                          class="h-40 object-cover"
+                          class="h-40 w-full object-cover rounded-lg"
                           src="https://img.freepik.com/free-photo/modern-stationary-collection-arrangement_23-2149309643.jpg"
                           alt="Product 2"
                         />
@@ -191,24 +188,24 @@
                     </div>
                     <a href="#">
                       <p
-                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-white"
+                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-gray-900"
                       >
                         Product 2
                       </p>
                     </a>
                     <p
-                      class="text-xl text-blue-500 font-heading font-medium tracking-tighter"
+                      class="text-xl font-heading font-medium tracking-tighter"
                     >
                       <span class="text-base pr-2">$</span><span>44.90</span>
                     </p>
                   </div>
                   <div class="w-full sm:w-1/2 xl:w-1/4 px-3 mb-14 sm:mb-0">
                     <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl"
+                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl shadow-lg"
                     >
                       <a class="block mx-auto max-w-max" href="#">
                         <img
-                          class="h-40 object-cover"
+                          class="h-40 w-full object-cover rounded-lg"
                           src="https://i.pinimg.com/736x/ba/c1/6e/bac16e9df93c7eeff7ad9268bbb4ad1c.jpg"
                           alt="Product 3"
                         />
@@ -216,24 +213,24 @@
                     </div>
                     <a href="#">
                       <p
-                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-white"
+                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-gray-900"
                       >
                         Product 3
                       </p>
                     </a>
                     <p
-                      class="text-xl text-blue-500 font-heading font-medium tracking-tighter"
+                      class="text-xl font-heading font-medium tracking-tighter"
                     >
                       <span class="text-base pr-2">$</span><span>2090.59</span>
                     </p>
                   </div>
                   <div class="w-full sm:w-1/2 xl:w-1/4 px-3">
                     <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl"
+                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl shadow-lg"
                     >
                       <a class="block mx-auto max-w-max" href="#">
                         <img
-                          class="h-40 object-cover"
+                          class="h-40 w-full object-cover rounded-lg"
                           src="https://cdn.pixabay.com/photo/2016/03/27/07/12/apple-1282241_1280.jpg"
                           alt="Product 4"
                         />
@@ -241,117 +238,13 @@
                     </div>
                     <a href="#">
                       <p
-                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-white"
+                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-gray-900"
                       >
                         Product 4
                       </p>
                     </a>
                     <p
-                      class="text-xl text-blue-500 font-heading font-medium tracking-tighter"
-                    >
-                      <span class="text-base pr-2">$</span><span>120.90</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="inline-block w-full whitespace-normal">
-                <div class="flex flex-wrap -mx-0">
-                  <div class="w-full sm:w-1/2 xl:w-1/4 px-3 mb-14 xl:mb-0">
-                    <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl"
-                    >
-                      <a class="block mx-auto max-w-max" href="#">
-                        <img
-                          class="h-40 object-cover"
-                          src="https://img.freepik.com/free-photo/modern-stationary-collection-arrangement_23-2149309643.jpg"
-                          alt="Product 1"
-                        />
-                      </a>
-                    </div>
-                    <a href="#">
-                      <p
-                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-white"
-                      >
-                        Product 1
-                      </p>
-                    </a>
-                    <p
-                      class="text-xl text-blue-500 font-heading font-medium tracking-tighter"
-                    >
-                      <span class="text-base pr-2">$</span><span>544.90</span>
-                    </p>
-                  </div>
-                  <div class="w-full sm:w-1/2 xl:w-1/4 px-3 mb-14 xl:mb-0">
-                    <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl"
-                    >
-                      <a class="block mx-auto max-w-max" href="#">
-                        <img
-                          class="h-40 object-cover"
-                          src="https://img.freepik.com/free-photo/modern-stationary-collection-arrangement_23-2149309643.jpg"
-                          alt="Product 2"
-                        />
-                      </a>
-                    </div>
-                    <a href="#">
-                      <p
-                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-white"
-                      >
-                        Product 2
-                      </p>
-                    </a>
-                    <p
-                      class="text-xl text-blue-500 font-heading font-medium tracking-tighter"
-                    >
-                      <span class="text-base pr-2">$</span><span>44.90</span>
-                    </p>
-                  </div>
-                  <div class="w-full sm:w-1/2 xl:w-1/4 px-3 mb-14 sm:mb-0">
-                    <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl"
-                    >
-                      <a class="block mx-auto max-w-max" href="#">
-                        <img
-                          class="h-40 object-cover"
-                          src="https://i.pinimg.com/736x/ba/c1/6e/bac16e9df93c7eeff7ad9268bbb4ad1c.jpg"
-                          alt="Product 3"
-                        />
-                      </a>
-                    </div>
-                    <a href="#">
-                      <p
-                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-white"
-                      >
-                        Product 3
-                      </p>
-                    </a>
-                    <p
-                      class="text-xl text-blue-500 font-heading font-medium tracking-tighter"
-                    >
-                      <span class="text-base pr-2">$</span><span>2090.59</span>
-                    </p>
-                  </div>
-                  <div class="w-full sm:w-1/2 xl:w-1/4 px-3">
-                    <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl"
-                    >
-                      <a class="block mx-auto max-w-max" href="#">
-                        <img
-                          class="h-40 object-cover"
-                          src="https://cdn.pixabay.com/photo/2016/03/27/07/12/apple-1282241_1280.jpg"
-                          alt="Product 4"
-                        />
-                      </a>
-                    </div>
-                    <a href="#">
-                      <p
-                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-white"
-                      >
-                        Product 4
-                      </p>
-                    </a>
-                    <p
-                      class="text-xl text-blue-500 font-heading font-medium tracking-tighter"
+                      class="text-xl font-heading font-medium tracking-tighter"
                     >
                       <span class="text-base pr-2">$</span><span>120.90</span>
                     </p>
@@ -364,11 +257,11 @@
           </div>
           <button
             x-on:click="activeSlide = activeSlide < slideCount ? activeSlide + 1 : 1"
-            class="hidden md:block pl-6 hover:text-darkBlueGray-400 text-white"
+            class="hidden md:block pl-6 hover:text-darkBlueGray-400 text-gray-900"
           >
             <svg
-              width="8"
-              height="12"
+              width="24"
+              height="24"
               viewbox="0 0 8 12"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -383,19 +276,11 @@
         <div class="md:hidden flex justify-center mt-20">
           <button
             x-on:click="activeSlide = activeSlide > 1 ? activeSlide - 1 : slideCount"
-            class="mx-14 hover:text-darkBlueGray-400 text-white"
-            <!--
-            Added
-            text-white
-            for
-            white
-            text
-            --
+            class="mx-14 hover:text-darkBlueGray-400 text-gray-900"
           >
-            >
             <svg
-              width="8"
-              height="12"
+              width="24"
+              height="24"
               viewbox="0 0 8 12"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -408,19 +293,11 @@
           </button>
           <button
             x-on:click="activeSlide = activeSlide < slideCount ? activeSlide + 1 : 1"
-            class="mx-14 hover:text-darkBlueGray-400 text-white"
-            <!--
-            Added
-            text-white
-            for
-            white
-            text
-            --
+            class="mx-14 hover:text-darkBlueGray-400 text-gray-900"
           >
-            >
             <svg
-              width="8"
-              height="12"
+              width="24"
+              height="24"
               viewbox="0 0 8 12"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

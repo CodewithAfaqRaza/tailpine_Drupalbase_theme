@@ -14,7 +14,7 @@
     <div class="container max-w-[1920px] w-full">
       <section
         x-data="{ mobileNavOpen: false, dropdown: false }"
-        class="relative text-gray-950 shadow-lg shadow-gray-300"
+        class="relative text-gray-700 shadow-lg shadow-gray-200"
       >
         <nav x-data="{dropdownOpen : false}" class="relative px-12 py-5">
           <div class="flex items-center justify-between">
@@ -27,20 +27,20 @@
               <li class="py-2">
                 <a
                   href="#"
-                  class="text-lg hover:text-gray-900 font-medium transition duration-200"
+                  class="text-md hover:text-gray-950 font-medium transition duration-200"
                   >Home</a
                 >
               </li>
               <li class="py-2">
                 <a
                   href="#"
-                  class="text-lg hover:text-gray-900 font-medium transition duration-200"
+                  class="text-md hover:text-gray-950 font-medium transition duration-200"
                   >Blog</a
                 >
               </li>
 
               <li
-                class="relative w-full font-medium text-lg xl:w-fit flex items-start rounded justify-between flex-col"
+                class="relative w-full font-medium text-md xl:w-fit flex items-start rounded justify-between flex-col"
                 @mouseenter="dropdownOpen = true"
                 @mouseleave="dropdownOpen = false"
                 @click="dropdownOpen = !dropdownOpen"
@@ -68,7 +68,7 @@
 
                 <!-- Sub Menu -->
                 <ul
-                  class="md:absolute left-0 top-8 mt-2 w-auto min-w-64 bg-white text-black border font-bold border-gray-200 rounded-lg shadow-lg z-10 transition-all duration-300 ease-in-out"
+                  class="md:absolute left-0 top-8 mt-2 w-auto min-w-64 bg-white text-gray-700 border font-md border-gray-200 rounded-lg shadow-lg z-10 transition-all duration-300 ease-in-out"
                   :class="dropdownOpen ? 'flex flex-col gap-1' : 'hidden '"
                   style="transition-property: opacity, max-height"
                 >
@@ -100,7 +100,7 @@
                 <a
                   x.mousemove=" dropdownOpen = false"
                   href="#"
-                  class="text-lg hover:text-gray-900 font-medium transition duration-200"
+                  class="text-md hover:text-gray-900 font-medium transition duration-200"
                   >Contact Us</a
                 >
               </li>

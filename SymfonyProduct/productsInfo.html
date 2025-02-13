@@ -11,438 +11,320 @@
     ></script>
   </head>
   <body>
-    <div class="container px-5">
+    <div class="container bg-gray-100 px-5 max-w-[1920px] w-full">
       <section
-        class="pt-12 pb-24 bg-blueGray-100 rounded-b-10xl overflow-hidden"
-        x-data="{ slideWidth: 0, activeSlide: 0, slideCount: 4, color: 1 }"
+        class="py-20"
+        x-data="{ tab: '' }"
+        x-init="tab = $refs.tab1.textContent"
       >
-        <ul class="flex flex-wrap px-4 md:mx-16 mb-12 md:mb-16 items-center">
-          <li class="mr-6">
-            <a
-              class="flex items-center text-sm font-medium text-gray-400 hover:text-gray-500"
-              href="#"
-            >
-              <span>Home</span>
-              <svg
-                class="ml-6"
-                width="4"
-                height="7"
-                viewbox="0 0 4 7"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0.150291 0.898704C-0.0500975 0.692525 -0.0500975 0.359292 0.150291 0.154634C0.35068 -0.0507836 0.674443 -0.0523053 0.874831 0.154634L3.7386 3.12787C3.93899 3.33329 3.93899 3.66576 3.7386 3.8727L0.874832 6.84594C0.675191 7.05135 0.35068 7.05135 0.150292 6.84594C-0.0500972 6.63976 -0.0500972 6.30652 0.150292 6.10187L2.49888 3.49914L0.150291 0.898704Z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </a>
-          </li>
-          <li class="mr-6">
-            <a
-              class="flex items-center text-sm font-medium text-gray-400 hover:text-gray-500"
-              href="#"
-            >
-              <span>Store</span>
-              <svg
-                class="ml-6"
-                width="4"
-                height="7"
-                viewbox="0 0 4 7"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0.150291 0.898704C-0.0500975 0.692525 -0.0500975 0.359292 0.150291 0.154634C0.35068 -0.0507836 0.674443 -0.0523053 0.874831 0.154634L3.7386 3.12787C3.93899 3.33329 3.93899 3.66576 3.7386 3.8727L0.874832 6.84594C0.675191 7.05135 0.35068 7.05135 0.150292 6.84594C-0.0500972 6.63976 -0.0500972 6.30652 0.150292 6.10187L2.49888 3.49914L0.150291 0.898704Z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a
-              class="text-sm font-medium text-indigo-500 hover:text-indigo-600"
-              href="#"
-              >Apple iPhone 12 PRO</a
-            >
-          </li>
-        </ul>
-        <div class="container px-4 mx-auto">
-          <div class="flex flex-wrap -mx-4">
-            <div class="w-full lg:w-1/2 px-4 xl:pr-20">
-              <div class="max-w-md mb-6">
-                <span class="text-xs text-gray-400 tracking-wide"
-                  >APPLE #3299803</span
-                >
-                <h2
-                  class="mt-6 mb-4 text-5xl md:text-7xl lg:text-8xl font-heading font-medium"
-                >
-                  Apple iPhone 12 Pro (128GB) - Silver
-                </h2>
-                <p class="flex items-center mb-6">
-                  <span class="mr-2 text-sm text-blue-500 font-medium">$</span>
-                  <span class="text-3xl text-blue-500 font-medium">44.90</span>
-                </p>
-                <p class="text-lg text-gray-400">
-                  The nulla commodo, commodo eros a lor, tristique lectus. Lorem
-                  sad 128 GB silver.
-                </p>
-              </div>
-              <div class="flex mb-6 items-center">
-                <div class="inline-flex mr-4">
-                  <button class="mr-1">
-                    <svg
-                      width="20"
-                      height="20"
-                      viewbox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M20 7.91679H12.4167L10 0.416779L7.58333 7.91679H0L6.18335 12.3168L3.81668 19.5835L10 15.0835L16.1834 19.5835L13.8167 12.3168L20 7.91679Z"
-                        fill="#C1C9D3"
-                      ></path>
-                    </svg>
-                  </button>
-                  <button class="mr-1">
-                    <svg
-                      width="20"
-                      height="20"
-                      viewbox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M20 7.91679H12.4167L10 0.416779L7.58333 7.91679H0L6.18335 12.3168L3.81668 19.5835L10 15.0835L16.1834 19.5835L13.8167 12.3168L20 7.91679Z"
-                        fill="#C1C9D3"
-                      ></path>
-                    </svg>
-                  </button>
-                  <button class="mr-1">
-                    <svg
-                      width="20"
-                      height="20"
-                      viewbox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M20 7.91679H12.4167L10 0.416779L7.58333 7.91679H0L6.18335 12.3168L3.81668 19.5835L10 15.0835L16.1834 19.5835L13.8167 12.3168L20 7.91679Z"
-                        fill="#C1C9D3"
-                      ></path>
-                    </svg>
-                  </button>
-                  <button class="mr-1">
-                    <svg
-                      width="20"
-                      height="20"
-                      viewbox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M20 7.91679H12.4167L10 0.416779L7.58333 7.91679H0L6.18335 12.3168L3.81668 19.5835L10 15.0835L16.1834 19.5835L13.8167 12.3168L20 7.91679Z"
-                        fill="#C1C9D3"
-                      ></path>
-                    </svg>
-                  </button>
-                  <button>
-                    <svg
-                      width="20"
-                      height="20"
-                      viewbox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M20 7.91679H12.4167L10 0.416779L7.58333 7.91679H0L6.18335 12.3168L3.81668 19.5835L10 15.0835L16.1834 19.5835L13.8167 12.3168L20 7.91679Z"
-                        fill="#C1C9D3"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-                <span class="text-md text-gray-400">4.59</span>
-              </div>
-              <div class="mb-6">
-                <h4 class="mb-3 font-heading font-medium">
-                  <span>Color:</span>
-                  <span class="text-gray-400">Silver</span>
-                </h4>
-                <button
-                  x-on:click="color = 1"
-                  class="inline-flex items-center justify-center p-1 rounded-full border border-gray-300"
-                  :class="{'border border-gray-300': color == 1, 'border border-transparent': color != 1}"
-                >
-                  <div class="w-6 h-6 rounded-full bg-white"></div>
-                </button>
-                <button
-                  x-on:click="color = 2"
-                  class="inline-flex items-center justify-center p-1 rounded-full border border-transparent"
-                  :class="{'border border-gray-300': color == 2, 'border border-transparent': color != 2}"
-                >
-                  <div class="w-6 h-6 rounded-full bg-orange-800"></div>
-                </button>
-                <button
-                  x-on:click="color = 3"
-                  class="inline-flex items-center justify-center p-1 rounded-full border border-transparent"
-                  :class="{'border border-gray-300': color == 3, 'border border-transparent': color != 3}"
-                >
-                  <div class="w-6 h-6 rounded-full bg-blue-900"></div>
-                </button>
-                <button
-                  x-on:click="color = 4"
-                  class="inline-flex items-center justify-center p-1 rounded-full border border-transparent"
-                  :class="{'border border-gray-300': color == 4, 'border border-transparent': color != 4}"
-                >
-                  <div class="w-6 h-6 rounded-full bg-yellow-500"></div>
-                </button>
-              </div>
-              <div class="mb-10">
-                <h4 class="mb-3 font-heading font-medium">Qty:</h4>
-                <input
-                  class="w-24 px-3 py-2 text-center bg-white border-2 border-blue-500 outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl"
-                  type="text"
-                  placeholder="1"
-                />
-              </div>
-              <div class="flex flex-wrap -mx-2 mb-12">
-                <div class="w-full md:w-2/3 px-2 mb-2 md:mb-0">
-                  <a
-                    class="block py-4 px-2 leading-8 font-heading font-medium tracking-tighter text-xl text-white text-center bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 hover:bg-blue-600 rounded-xl"
-                    href="#"
-                    >Add to bag</a
+        <div class="container px-4 mx-auto shadow-2xl py-10">
+          <div class="max-w-lg lg:max-w-6xl mx-auto">
+            <div class="flex flex-wrap -mx-4 mb-10">
+              <div class="w-full lg:w-4/12 px-4 mb-12 lg:mb-0">
+                <div>
+                  <span
+                    class="inline-flex h-8 mb-4 px-1 items-center justify-center text-sm font-black text-white uppercase bg-gray-500 rounded-md shadow-sm"
+                    >Label</span
                   >
-                </div>
-                <div class="w-full md:w-1/3 px-2">
-                  <a
-                    class="flex w-full py-4 px-2 items-center justify-center leading-8 font-heading font-medium tracking-tighter text-xl text-center bg-white focus:ring-2 focus:ring-gray-200 focus:ring-opacity-50 hover:bg-opacity-60 rounded-xl"
-                    href="#"
-                  >
-                    <span class="mr-2">Wishlist</span>
-                    <svg
-                      width="23"
-                      height="22"
-                      viewbox="0 0 23 22"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M11.3235 20.1324L2.52488 10.8515C1.75232 10.0706 1.24237 9.06367 1.06728 7.97339C0.8922 6.88311 1.06086 5.76477 1.54936 4.7768V4.7768C1.91837 4.03089 2.45739 3.3843 3.12201 2.89033C3.78663 2.39635 4.55781 2.06911 5.37203 1.93558C6.18626 1.80205 7.0202 1.86605 7.80517 2.1223C8.59013 2.37855 9.30364 2.81972 9.88691 3.40946L11.3235 4.86204L12.7601 3.40946C13.3434 2.81972 14.0569 2.37855 14.8419 2.1223C15.6269 1.86605 16.4608 1.80205 17.275 1.93558C18.0892 2.06911 18.8604 2.39635 19.525 2.89033C20.1897 3.3843 20.7287 4.03089 21.0977 4.7768V4.7768C21.5862 5.76477 21.7549 6.88311 21.5798 7.97339C21.4047 9.06367 20.8947 10.0706 20.1222 10.8515L11.3235 20.1324Z"
-                        stroke="black"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </a>
+                  <h2 class="text-4xl font-black mb-1">Product title</h2>
+                  <span class="block text-sm font-bold mb-5">Brand Name</span>
+                  <p class="font-bold mb-2">
+                    Pariatur ex aliqua elit ut enim consequat amet non do ut. Ad
+                    aute deserunt fugiat qui Lorem in quis velit labore
+                    voluptate.
+                  </p>
+                  <ul class="list-disc list-inside font-medium">
+                    <li>
+                      Pariatur ex aliqua elit ut enim consequat amet non do ut.
+                    </li>
+                    <li>
+                      Ad aute deserunt fugiat qui Lorem in quis velit labore
+                      voluptate.
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <div>
-                <h4 class="mb-6 font-heading font-medium">More information</h4>
-                <button
-                  class="w-full pl-6 lg:pl-12 pr-6 py-4 mb-4 leading-7 rounded-2xl border-2 border-blueGray-200 hover:border-blueGray-300"
-                  x-data="{ accordion: false }"
-                  x-on:click="accordion = !accordion"
-                >
-                  <div class="flex justify-between items-center">
-                    <h3 class="text-lg font-heading font-medium">
-                      Shipping & returns
-                    </h3>
-                    <span
-                      :class="{'rotate-180': accordion, 'rotate-0': !accordion }"
-                      class="inline-block transform rotate-0"
-                    >
-                      <svg
-                        width="12"
-                        height="8"
-                        viewbox="0 0 12 8"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+              <div class="w-full lg:w-5/12 px-4 mb-12 lg:mb-0">
+                <div class="h-112 bg-blueGray-900 rounded-md">
+                  <img
+                    class="img-fluid w-full h-full transform -translate-x-1 -translate-y-1 object-cover border-2 border-black object-left rounded-md"
+                    src="https://cdn.pixabay.com/photo/2019/03/31/07/44/music-4092614_1280.jpg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="w-full lg:w-3/12 px-4">
+                <div>
+                  <span
+                    class="inline-block text-gray-200 px-3 py-2 mb-5 text-4xl sm:text-5xl rounded font-black bg-gray-700"
+                    >$535,50</span
+                  >
+                  <div class="flex flex-wrap mb-6">
+                    <div class="w-full lg:w-auto mb-4 xl:mb-0 mr-4">
+                      <span class="block text-sm font-black mb-2">Amount</span>
+                      <div
+                        class="flex h-12 w-24 px-2 items-center justify-between bg-white border-2 border-black rounded-md"
+                        x-data="{ quantity: 1 }"
                       >
-                        <path
-                          d="M10.4594 0.289848C10.8128 -0.096616 11.3841 -0.096616 11.7349 0.289848C12.0871 0.676312 12.0897 1.30071 11.7349 1.68718L6.63794 7.21015C6.28579 7.59662 5.71584 7.59662 5.36108 7.21015L0.264109 1.68718C-0.0880363 1.30215 -0.0880363 0.676312 0.264109 0.289848C0.617558 -0.096616 1.18882 -0.096616 1.53966 0.289848L6.00147 4.81927L10.4594 0.289848Z"
-                          fill="black"
-                        ></path>
-                      </svg>
-                    </span>
+                        <button
+                          x-on:click="quantity > 1 ? quantity-- : quantity"
+                          class="flex w-3.5 h-3.5 px-px items-center justify-center bg-black rounded transition duration-100"
+                        >
+                          <div class="h-px mx-px w-full bg-white"></div>
+                        </button>
+                        <input
+                          x-model="quantity"
+                          class="w-10 text-center text-sm font-bold placeholder-black text-black outline-none"
+                          type="number"
+                        />
+                        <button
+                          x-on:click="quantity++"
+                          class="relative flex w-3.5 h-3.5 px-px py-px items-center justify-center bg-black hover:bg-gray-900 rounded transition duration-100"
+                        >
+                          <div class="relative h-full w-full py-px">
+                            <div
+                              class="absolute top-1/2 left-0 h-px w-full bg-white"
+                            ></div>
+                            <div
+                              class="inline-block max-w-max mx-auto h-full bg-white"
+                            >
+                              <div class="inline-block px-px"></div>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                  <div
-                    x-ref="container"
-                    :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
-                    class="overflow-hidden h-0 duration-500"
-                    style=""
-                  >
-                    <p
-                      class="max-w-xl text-left mt-4 text-lg tracking-tighter text-gray-400"
-                    >
-                      Pretium ac auctor quis urna orci feugiat. Vulputate tellus
-                      velit tellus orci auctor vel nulla facilisi ut. Dummy
-                      conten amazing Ante nunc risus viverra vivamus.
-                    </p>
-                  </div>
-                </button>
-                <button
-                  class="w-full pl-6 lg:pl-12 pr-6 py-4 leading-7 rounded-2xl border-2 border-blueGray-200 hover:border-blueGray-300"
-                  x-data="{ accordion: false }"
-                  x-on:click="accordion = !accordion"
-                >
-                  <div class="flex justify-between items-center">
-                    <h3 class="text-lg font-heading font-medium">
-                      Product details
-                    </h3>
-                    <span
-                      :class="{'rotate-180': accordion, 'rotate-0': !accordion }"
-                      class="inline-block transform rotate-0"
-                    >
-                      <svg
-                        width="12"
-                        height="8"
-                        viewbox="0 0 12 8"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                  <div class="flex -mx-2 items-center mb-6">
+                    <div class="w-full xl:w-auto px-2 mb-2">
+                      <a
+                        class="group relative inline-block h-12 w-full xl:w-52 -mb-2 bg-gray-900 rounded-md"
+                        href="#"
                       >
-                        <path
-                          d="M10.4594 0.289848C10.8128 -0.096616 11.3841 -0.096616 11.7349 0.289848C12.0871 0.676312 12.0897 1.30071 11.7349 1.68718L6.63794 7.21015C6.28579 7.59662 5.71584 7.59662 5.36108 7.21015L0.264109 1.68718C-0.0880363 1.30215 -0.0880363 0.676312 0.264109 0.289848C0.617558 -0.096616 1.18882 -0.096616 1.53966 0.289848L6.00147 4.81927L10.4594 0.289848Z"
-                          fill="black"
-                        ></path>
-                      </svg>
-                    </span>
+                        <div
+                          class="absolute top-0 left-0 transform -translate-y-1 -translate-x-1 w-full h-full group-hover:translate-y-0 group-hover:translate-x-0 transition duration-300"
+                        >
+                          <div
+                            class="flex h-full w-full items-center justify-center bg-gray-600 rounded-md"
+                          >
+                            <span class="text-base font-black text-gray-100"
+                              >Add to Cart</span
+                            >
+                          </div>
+                        </div>
+                      </a>
+                    </div>
                   </div>
-                  <div
-                    x-ref="container"
-                    :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
-                    class="overflow-hidden h-0 duration-500"
-                    style=""
-                  >
-                    <p
-                      class="max-w-xl text-left mt-4 text-lg tracking-tighter text-gray-400"
+                  <div>
+                    <span class="block text-sm font-black mb-2"
+                      >Share on Social Media</span
                     >
-                      Pretium ac auctor quis urna orci feugiat. Vulputate tellus
-                      velit tellus orci auctor vel nulla facilisi ut. Dummy
-                      conten amazing Ante nunc risus viverra vivamus.
-                    </p>
+                    <div>
+                      <a
+                        class="inline-block text-gray-500 hover:text-gray-800 mr-6"
+                        href="#"
+                      >
+                        <svg
+                          width="24"
+                          height="24"
+                          viewbox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M13.6349 20.7272V12.766H16.3583L16.7669 9.66243H13.6349V7.68126C13.6349 6.78299 13.8882 6.17083 15.203 6.17083L16.8771 6.17015V3.39421C16.5876 3.35731 15.5938 3.27271 14.4371 3.27271C12.0217 3.27271 10.3681 4.71878 10.3681 7.37389V9.66243H7.63647V12.766H10.3681V20.7272H13.6349Z"
+                            fill="currentColor"
+                          ></path>
+                          <mask
+                            id="mask0_601_10113"
+                            style="mask-type: alpha"
+                            maskunits="userSpaceOnUse"
+                            x="7"
+                            y="3"
+                            width="10"
+                            height="18"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M13.6349 20.7272V12.766H16.3583L16.7669 9.66243H13.6349V7.68126C13.6349 6.78299 13.8882 6.17083 15.203 6.17083L16.8771 6.17015V3.39421C16.5876 3.35731 15.5938 3.27271 14.4371 3.27271C12.0217 3.27271 10.3681 4.71878 10.3681 7.37389V9.66243H7.63647V12.766H10.3681V20.7272H13.6349Z"
+                              fill="white"
+                            ></path>
+                          </mask>
+                        </svg>
+                      </a>
+                      <a
+                        class="inline-block text-gray-500 hover:text-gray-800 mr-6"
+                        href="#"
+                      >
+                        <svg
+                          width="24"
+                          height="24"
+                          viewbox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M21.8181 6.14598C21.1356 6.44844 20.4032 6.65356 19.6336 6.74513C20.4194 6.27462 21.0208 5.52831 21.3059 4.64177C20.5689 5.0775 19.7553 5.39389 18.8885 5.56541C18.1943 4.82489 17.2069 4.36365 16.1118 4.36365C14.0108 4.36365 12.3072 6.06719 12.3072 8.16707C12.3072 8.46489 12.3408 8.75577 12.4057 9.03392C9.24434 8.87513 6.44104 7.3605 4.56483 5.05895C4.23686 5.61986 4.05028 6.27344 4.05028 6.9711C4.05028 8.29107 4.72243 9.45574 5.74225 10.1371C5.11877 10.1163 4.53237 9.94477 4.01901 9.65968V9.70719C4.01901 11.5498 5.33086 13.0876 7.07031 13.4376C6.75161 13.5234 6.41555 13.5709 6.06789 13.5709C5.82222 13.5709 5.58464 13.5466 5.35171 13.5002C5.8361 15.0125 7.24067 16.1123 8.90483 16.1424C7.6034 17.1623 5.96243 17.7683 4.1801 17.7683C3.87301 17.7683 3.57052 17.7498 3.27271 17.7162C4.95655 18.7974 6.95561 19.4279 9.10416 19.4279C16.1026 19.4279 19.928 13.6312 19.928 8.60398L19.9153 8.11147C20.6627 7.57834 21.3094 6.90853 21.8181 6.14598Z"
+                            fill="currentColor"
+                          ></path>
+                          <mask
+                            id="mask0_601_10114"
+                            style="mask-type: alpha"
+                            maskunits="userSpaceOnUse"
+                            x="3"
+                            y="4"
+                            width="19"
+                            height="16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M21.8181 6.14598C21.1356 6.44844 20.4032 6.65356 19.6336 6.74513C20.4194 6.27462 21.0208 5.52831 21.3059 4.64177C20.5689 5.0775 19.7553 5.39389 18.8885 5.56541C18.1943 4.82489 17.2069 4.36365 16.1118 4.36365C14.0108 4.36365 12.3072 6.06719 12.3072 8.16707C12.3072 8.46489 12.3408 8.75577 12.4057 9.03392C9.24434 8.87513 6.44104 7.3605 4.56483 5.05895C4.23686 5.61986 4.05028 6.27344 4.05028 6.9711C4.05028 8.29107 4.72243 9.45574 5.74225 10.1371C5.11877 10.1163 4.53237 9.94477 4.01901 9.65968V9.70719C4.01901 11.5498 5.33086 13.0876 7.07031 13.4376C6.75161 13.5234 6.41555 13.5709 6.06789 13.5709C5.82222 13.5709 5.58464 13.5466 5.35171 13.5002C5.8361 15.0125 7.24067 16.1123 8.90483 16.1424C7.6034 17.1623 5.96243 17.7683 4.1801 17.7683C3.87301 17.7683 3.57052 17.7498 3.27271 17.7162C4.95655 18.7974 6.95561 19.4279 9.10416 19.4279C16.1026 19.4279 19.928 13.6312 19.928 8.60398L19.9153 8.11147C20.6627 7.57834 21.3094 6.90853 21.8181 6.14598Z"
+                              fill="white"
+                            ></path>
+                          </mask>
+                        </svg>
+                      </a>
+                      <a
+                        class="inline-block text-gray-500 hover:text-gray-800 mr-6"
+                        href="#"
+                      >
+                        <svg
+                          width="24"
+                          height="24"
+                          viewbox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M7.6007 2.18176H16.3992C19.3874 2.18176 21.8184 4.61276 21.8182 7.60069V16.3992C21.8182 19.3871 19.3874 21.8181 16.3992 21.8181H7.6007C4.61276 21.8181 2.18188 19.3872 2.18188 16.3992V7.60069C2.18188 4.61276 4.61276 2.18176 7.6007 2.18176ZM16.3993 20.0759C18.4267 20.0759 20.0761 18.4266 20.0761 16.3992H20.076V7.60069C20.076 5.57343 18.4266 3.924 16.3992 3.924H7.6007C5.57343 3.924 3.92412 5.57343 3.92412 7.60069V16.3992C3.92412 18.4266 5.57343 20.076 7.6007 20.0759H16.3993ZM6.85721 12.0001C6.85721 9.16418 9.16425 6.85709 12.0001 6.85709C14.8359 6.85709 17.1429 9.16418 17.1429 12.0001C17.1429 14.8358 14.8359 17.1428 12.0001 17.1428C9.16425 17.1428 6.85721 14.8358 6.85721 12.0001ZM8.62805 11.9999C8.62805 13.8592 10.1408 15.3718 12.0001 15.3718C13.8593 15.3718 15.3721 13.8592 15.3721 11.9999C15.3721 10.1405 13.8594 8.62784 12.0001 8.62784C10.1407 8.62784 8.62805 10.1405 8.62805 11.9999Z"
+                            fill="currentColor"
+                          ></path>
+                          <mask
+                            id="mask0_601_10115"
+                            style="mask-type: alpha"
+                            maskunits="userSpaceOnUse"
+                            x="2"
+                            y="2"
+                            width="20"
+                            height="20"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M7.6007 2.18176H16.3992C19.3874 2.18176 21.8184 4.61276 21.8182 7.60069V16.3992C21.8182 19.3871 19.3874 21.8181 16.3992 21.8181H7.6007C4.61276 21.8181 2.18188 19.3872 2.18188 16.3992V7.60069C2.18188 4.61276 4.61276 2.18176 7.6007 2.18176ZM16.3993 20.0759C18.4267 20.0759 20.0761 18.4266 20.0761 16.3992H20.076V7.60069C20.076 5.57343 18.4266 3.924 16.3992 3.924H7.6007C5.57343 3.924 3.92412 5.57343 3.92412 7.60069V16.3992C3.92412 18.4266 5.57343 20.076 7.6007 20.0759H16.3993ZM6.85721 12.0001C6.85721 9.16418 9.16425 6.85709 12.0001 6.85709C14.8359 6.85709 17.1429 9.16418 17.1429 12.0001C17.1429 14.8358 14.8359 17.1428 12.0001 17.1428C9.16425 17.1428 6.85721 14.8358 6.85721 12.0001ZM8.62805 11.9999C8.62805 13.8592 10.1408 15.3718 12.0001 15.3718C13.8593 15.3718 15.3721 13.8592 15.3721 11.9999C15.3721 10.1405 13.8594 8.62784 12.0001 8.62784C10.1407 8.62784 8.62805 10.1405 8.62805 11.9999Z"
+                              fill="white"
+                            ></path>
+                          </mask>
+                        </svg>
+                      </a>
+                      <a
+                        class="inline-block text-gray-500 hover:text-gray-800"
+                        href="#"
+                      >
+                        <svg
+                          width="24"
+                          height="24"
+                          viewbox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M19.2 3H4.8C3.81 3 3 3.81 3 4.8V19.2C3 20.19 3.81 21 4.8 21H19.2C20.19 21 21 20.19 21 19.2V4.8C21 3.81 20.19 3 19.2 3ZM8.4 18.3H5.7V10.2H8.4V18.3ZM7.05 8.67C6.15 8.67 5.43 7.95 5.43 7.05C5.43 6.15 6.15 5.43 7.05 5.43C7.95 5.43 8.67 6.15 8.67 7.05C8.67 7.95 7.95 8.67 7.05 8.67ZM18.3 18.3H15.6V13.53C15.6 12.81 14.97 12.18 14.25 12.18C13.53 12.18 12.9 12.81 12.9 13.53V18.3H10.2V10.2H12.9V11.28C13.35 10.56 14.34 10.02 15.15 10.02C16.86 10.02 18.3 11.46 18.3 13.17V18.3Z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                      </a>
+                    </div>
                   </div>
-                </button>
+                </div>
               </div>
             </div>
+            <div class="mb-8 border-b-2 border-black">
+              <div class="flex flex-col md:flex-row -mb-px">
+                <a
+                  x-ref="tab1"
+                  x-on:click.prevent="tab = $refs.tab1.textContent"
+                  class="inline-block px-2 pb-2 mb-3 md:mb-0 text-lg text-indigo-500 border-indigo-500 font-bold border-b-4"
+                  href="#"
+                  :class="{ 'text-indigo-500 border-indigo-500': tab == $refs.tab1.textContent, 'border-transparent text-black': tab != $refs.tab1.textContent }"
+                  >Description</a
+                ><a
+                  x-ref="tab2"
+                  x-on:click.prevent="tab = $refs.tab2.textContent"
+                  class="inline-block px-2 pb-2 mb-3 md:mb-0 text-lg font-bold border-b-4 border-transparent text-black"
+                  href="#"
+                  :class="{ 'text-indigo-500 border-indigo-500': tab == $refs.tab2.textContent, 'border-transparent text-black': tab != $refs.tab2.textContent }"
+                  >Customer Reviews</a
+                ><a
+                  x-ref="tab3"
+                  x-on:click.prevent="tab = $refs.tab3.textContent"
+                  class="inline-block px-2 pb-2 mb-3 md:mb-0 text-lg font-bold border-b-4 border-transparent text-black"
+                  href="#"
+                  :class="{ 'text-indigo-500 border-indigo-500': tab == $refs.tab3.textContent, 'border-transparent text-black': tab != $refs.tab3.textContent }"
+                  >Shipping & Returns</a
+                >
+              </div>
+            </div>
+            <div :class="{'hidden': tab != $refs.tab1.textContent}">
+              <h4 class="text-xl font-black mb-3">
+                Lorem ipsum dolor sit amet
+              </h4>
+              <p class="text-lg font-bold">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing. Lorem Ipsum is simply dumm
+              </p>
+            </div>
             <div
-              class="w-full lg:w-1/2 px-4 xl:pl-20 mb-16 lg:mb-0 order-first lg:order-last"
+              :class="{'hidden': tab != $refs.tab2.textContent}"
+              class="hidden"
             >
-              <div
-                class="relative md:w-2/3 lg:w-auto mx-auto mb-14 overflow-hidden"
-              >
-                <div
-                  :style="'transform: translateX(-' + slideWidth + 'px)'"
-                  class="mb-20 flex transition-transform duration-500 ease-in-out"
-                  style="transform: translateX(-0px)"
-                >
-                  <div x-ref="slide1" class="flex-shrink-0 w-full">
-                    <img
-                      src="uinel-assets/images/ecommerce-product-info/ph-big2.png"
-                      alt=""
-                    />
-                  </div>
-                  <div x-ref="slide2" class="flex-shrink-0 w-full">
-                    <img
-                      src="uinel-assets/images/ecommerce-product-info/ph-big2.png"
-                      alt=""
-                    />
-                  </div>
-                  <div x-ref="slide3" class="flex-shrink-0 w-full">
-                    <img
-                      src="uinel-assets/images/ecommerce-product-info/ph-big2.png"
-                      alt=""
-                    />
-                  </div>
-                  <div x-ref="slide4" class="flex-shrink-0 w-full">
-                    <img
-                      src="uinel-assets/images/ecommerce-product-info/ph-big2.png"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <button
-                  x-on:click.prevent="activeSlide > 0 ? (activeSlide -= 1, slideWidth -= $refs['slide' + (activeSlide + 1)].offsetWidth) : null"
-                  class="absolute top-1/2 left-0 ml-2 md:ml-10 hover:text-darkBlueGray-400"
-                >
-                  <svg
-                    width="8"
-                    height="12"
-                    viewbox="0 0 8 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.21015 10.4594C7.59661 10.8128 7.59661 11.3841 7.21015 11.7349C6.82369 12.0871 6.19929 12.0897 5.81282 11.7349L0.289847 6.63794C-0.0966174 6.28579 -0.0966173 5.71584 0.289847 5.36108L5.81282 0.264109C6.19785 -0.0880364 6.82369 -0.0880364 7.21015 0.264109C7.59662 0.617558 7.59662 1.18882 7.21015 1.53966L2.68073 6.00147L7.21015 10.4594Z"
-                      fill="currentColor"
-                    ></path>
-                  </svg>
-                </button>
-                <button
-                  x-on:click.prevent="activeSlide < slideCount - 1 ? (activeSlide += 1, slideWidth += $refs['slide' + activeSlide].offsetWidth) : activeSlide = slideCount - 1"
-                  class="absolute top-1/2 right-0 mr-2 md:mr-10 hover:text-darkBlueGray-400"
-                >
-                  <svg
-                    width="8"
-                    height="12"
-                    viewbox="0 0 8 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0.289849 1.54064C-0.0966146 1.18719 -0.0966145 0.615928 0.28985 0.265087C0.676314 -0.087058 1.30071 -0.0896662 1.68718 0.265087L7.21015 5.36206C7.59662 5.71421 7.59662 6.28416 7.21015 6.63892L1.68718 11.7359C1.30215 12.088 0.676312 12.088 0.289848 11.7359C-0.0966159 11.3824 -0.0966159 10.8112 0.289848 10.4603L4.81927 5.99853L0.289849 1.54064Z"
-                      fill="currentColor"
-                    ></path>
-                  </svg>
-                </button>
-                <p
-                  class="hidden md:block absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-10 text-sm text-gray-300"
-                >
-                  Roll over image to zoom in
-                </p>
-              </div>
-              <div class="flex flex-wrap md:px-10 -mx-1">
-                <button
-                  :class="{ 'border-blue-500': activeSlide == 0, 'border-transparent': activeSlide != 0 }"
-                  class="w-1/2 md:w-1/4 px-1 mb-1 md:mb-0 border-2 border-blue-500 rounded-4xl"
-                >
-                  <img
-                    class="w-full h-full"
-                    src="uinel-assets/images/ecommerce-product-info/product-ph1.png"
-                    alt=""
-                  />
-                </button>
-                <button
-                  :class="{ 'border-blue-500': activeSlide == 1, 'border-transparent': activeSlide != 1 }"
-                  class="w-1/2 md:w-1/4 px-1 mb-1 md:mb-0 border-2 border-transparent rounded-4xl"
-                >
-                  <img
-                    class="w-full h-full"
-                    src="uinel-assets/images/ecommerce-product-info/product-ph4.png"
-                    alt=""
-                  />
-                </button>
-                <button
-                  :class="{ 'border-blue-500': activeSlide == 2, 'border-transparent': activeSlide != 2 }"
-                  class="w-1/2 md:w-1/4 px-1 border-2 border-transparent rounded-4xl"
-                >
-                  <img
-                    class="w-full h-full"
-                    src="uinel-assets/images/ecommerce-product-info/product-ph3.png"
-                    alt=""
-                  />
-                </button>
-                <button
-                  :class="{ 'border-blue-500': activeSlide == 3, 'border-transparent': activeSlide != 3 }"
-                  class="w-1/2 md:w-1/4 px-1 border-2 border-transparent rounded-4xl"
-                >
-                  <img
-                    class="w-full h-full"
-                    src="uinel-assets/images/ecommerce-product-info/product-ph2.png"
-                    alt=""
-                  />
-                </button>
-              </div>
+              <h4 class="text-xl font-black mb-3">
+                Lorem ipsum dolor sit amet
+              </h4>
+              <p class="text-lg font-bold">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s.
+              </p>
+            </div>
+            <div
+              :class="{'hidden': tab != $refs.tab3.textContent}"
+              class="hidden"
+            >
+              <h4 class="text-xl font-black mb-3">
+                Lorem ipsum dolor sit amet
+              </h4>
+              <p class="text-lg font-bold">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+              </p>
             </div>
           </div>
         </div>

@@ -14,21 +14,17 @@
     <div class="container max-w-[1920px] w-full">
       <section
         x-data="{ mobileNavOpen: false }"
-        class="overflow-hidden shadow-lg shadow-gray-500"
+        class="overflow-hidden shadow-lg shadow-gray-200"
       >
         <!-- Dark gray background -->
         <nav class="mx-4 py-6">
           <div class="container mx-auto px-4">
             <div class="relative flex items-center justify-between">
-              <div class="flex items-center gap-10">
+              <div class="flex items-center gap-14">
                 <a href="#" class="inline-block">
-                  <img
-                    class="text-white h-5 md:h-8"
-                    src="ALogo.svg"
-                    alt="LOGO"
-                  />
+                  <img class="h-5 md:h-8" src="ALogo.svg" alt="LOGO" />
                 </a>
-                <ul class="hidden lg:flex ml-10 gap-5 text-black">
+                <ul class="hidden lg:flex ml-10 gap-5 text-gray-800">
                   <li class="mr-8">
                     <a
                       class="inline-block hover:text-gray-700 font-medium"
@@ -59,16 +55,16 @@
                   </li>
                 </ul>
               </div>
-              <div class="flex items-center justify-end">
+              <div class="flex items-center justify-end text-gray-800">
                 <div class="hidden md:block">
                   <a
                     href="#"
-                    class="inline-flex py-2.5 px-4 mr-4 items-center justify-center text-sm font-medium hover:text-white border border-gray-400 hover:border-gray-300 hover:bg-gray-700 rounded-full transition duration-200"
+                    class="inline-flex py-3 px-6 mr-4 items-center justify-center text-sm font-medium hover:text-white bg-gray-200 hover:border-gray-300 hover:bg-gray-700 rounded-full transition duration-200"
                     >Login</a
                   >
                   <a
                     href="#"
-                    class="inline-flex py-2.5 px-4 items-center justify-center text-sm font-medium border border-gray-400 hover:border-white hover:text-white hover:bg-gray-700 rounded-full transition duration-200"
+                    class="inline-flex py-3 px-6 items-center justify-center text-sm font-medium bg-gray-200 hover:border-white hover:text-white hover:bg-gray-700 rounded-full transition duration-200"
                     >Get in touch</a
                   >
                 </div>
