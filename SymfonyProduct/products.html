@@ -4,24 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../output.css" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
   </head>
   <body>
-    <section class="bg-gray-200" x-data="{ activeSlide: 1, slideCount: 2 }">
+    <section
+      class="bg-gray-900 text-white min-h-screen"
+      x-data="{ activeSlide: 1, slideCount: 2 }"
+    >
       <div class="container px-4 py-10 mx-auto">
         <h2
-          class="mb-14 xl:mb-24 text-5xl xl:text-7xl font-heading font-medium text-center text-gray-800"
+          class="mb-14 xl:mb-24 text-5xl xl:text-7xl font-heading font-medium text-center"
         >
           Products
         </h2>
         <div class="flex items-center">
           <button
             x-on:click="activeSlide = activeSlide > 1 ? activeSlide - 1 : slideCount"
-            class="hidden md:block pr-6 hover:text-darkBlueGray-400 text-gray-900"
+            class="hidden md:block pr-6 hover:text-gray-300"
           >
             <svg
               width="24"
@@ -42,213 +45,175 @@
               class="whitespace-nowrap transition-transform duration-500 ease-in-out"
               style="transform: translateX(-0%)"
             >
-              <div class="inline-block w-full whitespace-normal">
-                <div class="flex flex-wrap -mx-3">
-                  <div class="w-full sm:w-1/2 xl:w-1/4 px-3 mb-14 xl:mb-0">
-                    <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl shadow-lg"
+              <div class="inline-block text-white w-full whitespace-normal">
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4"
+                >
+                  <!-- Sample Product Card -->
+                  <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <img
+                      src="https://images.unsplash.com/photo-1606221793073-1e3b79689777?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Product"
+                      class="rounded-md mb-4"
+                    />
+                    <h2 class="text-lg font-semibold">Wireless Headphones</h2>
+                    <p class="text-sm text-gray-400">4.5 ⭐ Electronics</p>
+                    <p class="text-xl font-bold mt-2">$199.99</p>
+                    <button
+                      class="mt-4 bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-600 w-full"
                     >
-                      <a class="block mx-auto max-w-max" href="#">
-                        <img
-                          class="h-40 w-full object-cover rounded-lg"
-                          src="https://img.freepik.com/free-photo/modern-stationary-collection-arrangement_23-2149309643.jpg"
-                          alt="Product 1"
-                        />
-                      </a>
-                    </div>
-                    <a href="#">
-                      <p
-                        class="mb-4 text-xl leading-8 font-heading font-bold hover:underline text-gray-900"
-                      >
-                        Product 1
-                      </p>
-                    </a>
-                    <p
-                      class="text-xl text-gray-900 font-heading font-extrabold tracking-tighter"
-                    >
-                      <span class="text-base pr-2">$</span><span>544.90</span>
-                    </p>
+                      Add to Cart
+                    </button>
                   </div>
-                  <div class="w-full sm:w-1/2 xl:w-1/4 px-3 mb-14 xl:mb-0">
-                    <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl shadow-lg"
+                  <!-- Repeat Product Cards for Different Categories -->
+                  <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <img
+                      src="https://images.unsplash.com/photo-1626958390898-162d3577f293?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Product"
+                      class="rounded-md mb-4"
+                    />
+                    <h2 class="text-lg font-semibold">Mechanical Keyboard</h2>
+                    <p class="text-sm text-gray-400">4.8 ⭐ Electronics</p>
+                    <p class="text-xl font-bold mt-2">$159.99</p>
+                    <button
+                      class="mt-4 bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-600 w-full"
                     >
-                      <a class="block mx-auto max-w-max" href="#">
-                        <img
-                          class="h-40 w-full object-cover rounded-lg"
-                          src="https://img.freepik.com/free-photo/modern-stationary-collection-arrangement_23-2149309643.jpg"
-                          alt="Product 2"
-                        />
-                      </a>
-                    </div>
-                    <a href="#">
-                      <p
-                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-gray-900"
-                      >
-                        Product 2
-                      </p>
-                    </a>
-                    <p
-                      class="text-xl font-heading font-medium tracking-tighter"
-                    >
-                      <span class="text-base pr-2">$</span><span>44.90</span>
-                    </p>
+                      Add to Cart
+                    </button>
                   </div>
-                  <div class="w-full sm:w-1/2 xl:w-1/4 px-3 mb-14 sm:mb-0">
-                    <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl shadow-lg"
+                  <!-- Add more product cards to fill 5-6 rows -->
+                  <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <img
+                      src="https://images.unsplash.com/photo-1503341733017-1901578f9f1e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Product"
+                      class="rounded-md mb-4"
+                    />
+                    <h2 class="text-lg font-semibold">Designer T-Shirt</h2>
+                    <p class="text-sm text-gray-400">4.2 ⭐ Clothing</p>
+                    <p class="text-xl font-bold mt-2">$29.99</p>
+                    <button
+                      class="mt-4 bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-600 w-full"
                     >
-                      <a class="block mx-auto max-w-max" href="#">
-                        <img
-                          class="h-40 w-full object-cover rounded-lg"
-                          src="https://i.pinimg.com/736x/ba/c1/6e/bac16e9df93c7eeff7ad9268bbb4ad1c.jpg"
-                          alt="Product 3"
-                        />
-                      </a>
-                    </div>
-                    <a href="#">
-                      <p
-                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-gray-900"
-                      >
-                        Product 3
-                      </p>
-                    </a>
-                    <p
-                      class="text-xl font-heading font-medium tracking-tighter"
-                    >
-                      <span class="text-base pr-2">$</span><span>2090.59</span>
-                    </p>
+                      Add to Cart
+                    </button>
                   </div>
-                  <div class="w-full sm:w-1/2 xl:w-1/4 px-3">
-                    <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl shadow-lg"
+                  <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <img
+                      src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Product"
+                      class="rounded-md mb-4"
+                    />
+                    <h2 class="text-lg font-semibold">Iphone</h2>
+                    <p class="text-sm text-gray-400">4.2 ⭐ Electronic</p>
+                    <p class="text-xl font-bold mt-2">$29.99</p>
+                    <button
+                      class="mt-4 bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-600 w-full"
                     >
-                      <a class="block mx-auto max-w-max" href="#">
-                        <img
-                          class="h-40 w-full object-cover rounded-lg"
-                          src="https://cdn.pixabay.com/photo/2016/03/27/07/12/apple-1282241_1280.jpg"
-                          alt="Product 4"
-                        />
-                      </a>
-                    </div>
-                    <a href="#">
-                      <p
-                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-gray-900"
-                      >
-                        Product 4
-                      </p>
-                    </a>
-                    <p
-                      class="text-xl font-heading font-medium tracking-tighter"
-                    >
-                      <span class="text-base pr-2">$</span><span>120.90</span>
-                    </p>
+                      Add to Cart
+                    </button>
                   </div>
+                  <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <img
+                      src="https://images.unsplash.com/photo-1593766788306-28561086694e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Product"
+                      class="rounded-md mb-4"
+                    />
+                    <h2 class="text-lg font-semibold">Cricket Bat</h2>
+                    <p class="text-sm text-gray-400">4.2 ⭐ Sports</p>
+                    <p class="text-xl font-bold mt-2">$29.99</p>
+                    <button
+                      class="mt-4 bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-600 w-full"
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                  <!-- Add more products here -->
                 </div>
               </div>
 
               <div class="inline-block w-full whitespace-normal">
-                <div class="flex flex-wrap -mx-3">
-                  <div class="w-full sm:w-1/2 xl:w-1/4 px-3 mb-14 xl:mb-0">
-                    <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl shadow-lg"
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4"
+                >
+                  <!-- Sample Product Card -->
+                  <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <img
+                      src="https://images.unsplash.com/photo-1606221793073-1e3b79689777?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Product"
+                      class="rounded-md mb-4"
+                    />
+                    <h2 class="text-lg font-semibold">Wireless Headphones</h2>
+                    <p class="text-sm text-gray-400">4.5 ⭐ Electronics</p>
+                    <p class="text-xl font-bold mt-2">$199.99</p>
+                    <button
+                      class="mt-4 bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-600 w-full"
                     >
-                      <a class="block mx-auto max-w-max" href="#">
-                        <img
-                          class="h-40 w-full object-cover rounded-lg"
-                          src="https://img.freepik.com/free-photo/modern-stationary-collection-arrangement_23-2149309643.jpg"
-                          alt="Product 1"
-                        />
-                      </a>
-                    </div>
-                    <a href="#">
-                      <p
-                        class="mb-4 text-xl leading-8 font-heading font-bold hover:underline text-gray-900"
-                      >
-                        Product 1
-                      </p>
-                    </a>
-                    <p
-                      class="text-xl text-gray-900 font-heading font-extrabold tracking-tighter"
-                    >
-                      <span class="text-base pr-2">$</span><span>544.90</span>
-                    </p>
+                      Add to Cart
+                    </button>
                   </div>
-                  <div class="w-full sm:w-1/2 xl:w-1/4 px-3 mb-14 xl:mb-0">
-                    <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl shadow-lg"
+                  <!-- Repeat Product Cards for Different Categories -->
+                  <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <img
+                      src="https://images.unsplash.com/photo-1626958390898-162d3577f293?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Product"
+                      class="rounded-md mb-4"
+                    />
+                    <h2 class="text-lg font-semibold">Mechanical Keyboard</h2>
+                    <p class="text-sm text-gray-400">4.8 ⭐ Electronics</p>
+                    <p class="text-xl font-bold mt-2">$159.99</p>
+                    <button
+                      class="mt-4 bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-600 w-full"
                     >
-                      <a class="block mx-auto max-w-max" href="#">
-                        <img
-                          class="h-40 w-full object-cover rounded-lg"
-                          src="https://img.freepik.com/free-photo/modern-stationary-collection-arrangement_23-2149309643.jpg"
-                          alt="Product 2"
-                        />
-                      </a>
-                    </div>
-                    <a href="#">
-                      <p
-                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-gray-900"
-                      >
-                        Product 2
-                      </p>
-                    </a>
-                    <p
-                      class="text-xl font-heading font-medium tracking-tighter"
-                    >
-                      <span class="text-base pr-2">$</span><span>44.90</span>
-                    </p>
+                      Add to Cart
+                    </button>
                   </div>
-                  <div class="w-full sm:w-1/2 xl:w-1/4 px-3 mb-14 sm:mb-0">
-                    <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl shadow-lg"
+                  <!-- Add more product cards to fill 5-6 rows -->
+                  <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <img
+                      src="https://images.unsplash.com/photo-1503341733017-1901578f9f1e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Product"
+                      class="rounded-md mb-4"
+                    />
+                    <h2 class="text-lg font-semibold">Designer T-Shirt</h2>
+                    <p class="text-sm text-gray-400">4.2 ⭐ Clothing</p>
+                    <p class="text-xl font-bold mt-2">$29.99</p>
+                    <button
+                      class="mt-4 bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-600 w-full"
                     >
-                      <a class="block mx-auto max-w-max" href="#">
-                        <img
-                          class="h-40 w-full object-cover rounded-lg"
-                          src="https://i.pinimg.com/736x/ba/c1/6e/bac16e9df93c7eeff7ad9268bbb4ad1c.jpg"
-                          alt="Product 3"
-                        />
-                      </a>
-                    </div>
-                    <a href="#">
-                      <p
-                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-gray-900"
-                      >
-                        Product 3
-                      </p>
-                    </a>
-                    <p
-                      class="text-xl font-heading font-medium tracking-tighter"
-                    >
-                      <span class="text-base pr-2">$</span><span>2090.59</span>
-                    </p>
+                      Add to Cart
+                    </button>
                   </div>
-                  <div class="w-full sm:w-1/2 xl:w-1/4 px-3">
-                    <div
-                      class="xl:flex xl:items-center p-10 xl:py-32 mb-8 bg-white rounded-3xl shadow-lg"
+                  <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <img
+                      src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Product"
+                      class="rounded-md mb-4"
+                    />
+                    <h2 class="text-lg font-semibold">Iphone</h2>
+                    <p class="text-sm text-gray-400">4.2 ⭐ Electronic</p>
+                    <p class="text-xl font-bold mt-2">$29.99</p>
+                    <button
+                      class="mt-4 bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-600 w-full"
                     >
-                      <a class="block mx-auto max-w-max" href="#">
-                        <img
-                          class="h-40 w-full object-cover rounded-lg"
-                          src="https://cdn.pixabay.com/photo/2016/03/27/07/12/apple-1282241_1280.jpg"
-                          alt="Product 4"
-                        />
-                      </a>
-                    </div>
-                    <a href="#">
-                      <p
-                        class="mb-4 text-xl leading-8 font-heading font-medium hover:underline text-gray-900"
-                      >
-                        Product 4
-                      </p>
-                    </a>
-                    <p
-                      class="text-xl font-heading font-medium tracking-tighter"
-                    >
-                      <span class="text-base pr-2">$</span><span>120.90</span>
-                    </p>
+                      Add to Cart
+                    </button>
                   </div>
+                  <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <img
+                      src="https://images.unsplash.com/photo-1593766788306-28561086694e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Product"
+                      class="rounded-md mb-4"
+                    />
+                    <h2 class="text-lg font-semibold">Cricket Bat</h2>
+                    <p class="text-sm text-gray-400">4.2 ⭐ Sports</p>
+                    <p class="text-xl font-bold mt-2">$29.99</p>
+                    <button
+                      class="mt-4 bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-600 w-full"
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                  <!-- Add more products here -->
                 </div>
               </div>
 
@@ -257,7 +222,7 @@
           </div>
           <button
             x-on:click="activeSlide = activeSlide < slideCount ? activeSlide + 1 : 1"
-            class="hidden md:block pl-6 hover:text-darkBlueGray-400 text-gray-900"
+            class="hidden md:block pl-6 hover:text-gray-200"
           >
             <svg
               width="24"
@@ -276,7 +241,7 @@
         <div class="md:hidden flex justify-center mt-20">
           <button
             x-on:click="activeSlide = activeSlide > 1 ? activeSlide - 1 : slideCount"
-            class="mx-14 hover:text-darkBlueGray-400 text-gray-900"
+            class="mx-14"
           >
             <svg
               width="24"
@@ -293,7 +258,7 @@
           </button>
           <button
             x-on:click="activeSlide = activeSlide < slideCount ? activeSlide + 1 : 1"
-            class="mx-14 hover:text-darkBlueGray-400 text-gray-900"
+            class="mx-14"
           >
             <svg
               width="24"

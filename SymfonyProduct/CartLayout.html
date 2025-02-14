@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopWave - Product Listing</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="min-h-screen bg-gray-900">
+    <!-- Header -->
+    <header class="bg-gray-800 border-b border-gray-700">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold text-white">
+          Shop<span class="text-purple-500">Wave</span>
+        </h1>
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="Search products..."
+              class="w-64 px-4 py-2 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            />
+            <i
+              data-lucide="search"
+              class="absolute right-3 top-2.5 h-5 w-5 text-gray-400"
+            ></i>
+          </div>
+          <button
+            class="p-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-white"
+          >
+            <i data-lucide="shopping-cart" class="h-6 w-6"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+      <div class="flex gap-8">
+        <!-- Sidebar -->
+        <div class="w-64 flex-shrink-0">
+          <div class="bg-gray-800 rounded-lg p-6">
+            <div class="flex items-center justify-between mb-6">
+              <h2 class="text-lg font-semibold text-white">Categories</h2>
+              <i data-lucide="filter" class="h-5 w-5 text-gray-400"></i>
+            </div>
+            <div class="space-y-2">
+              <button
+                class="w-full flex justify-between items-center px-4 py-2 rounded-lg bg-purple-500 text-white"
+              >
+                <span>All</span>
+                <span class="text-sm bg-gray-700 px-2 py-1 rounded-full"
+                  >42</span
+                >
+              </button>
+              <button
+                class="w-full flex justify-between items-center px-4 py-2 rounded-lg text-gray-300 hover:bg-gray-700"
+              >
+                <span>Electronics</span>
+                <span class="text-sm bg-gray-700 px-2 py-1 rounded-full"
+                  >12</span
+                >
+              </button>
+              <button
+                class="w-full flex justify-between items-center px-4 py-2 rounded-lg text-gray-300 hover:bg-gray-700"
+              >
+                <span>Clothing</span>
+                <span class="text-sm bg-gray-700 px-2 py-1 rounded-full"
+                  >15</span
+                >
+              </button>
+              <button
+                class="w-full flex justify-between items-center px-4 py-2 rounded-lg text-gray-300 hover:bg-gray-700"
+              >
+                <span>Books</span>
+                <span class="text-sm bg-gray-700 px-2 py-1 rounded-full"
+                  >8</span
+                >
+              </button>
+              <button
+                class="w-full flex justify-between items-center px-4 py-2 rounded-lg text-gray-300 hover:bg-gray-700"
+              >
+                <span>Home & Garden</span>
+                <span class="text-sm bg-gray-700 px-2 py-1 rounded-full"
+                  >7</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="flex-1">
+          <div class="grid grid-cols-3 gap-6">
+            <!-- Product Card 1 -->
+            <div
+              class="bg-gray-800 rounded-lg overflow-hidden hover:ring-2 hover:ring-purple-500 transition-all"
+            >
+              <img
+                src="https://cdn.pixabay.com/photo/2016/03/27/18/13/laptop-1283368_1280.jpg"
+                alt="Wireless Headphones"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-white mb-2">
+                  Wireless Headphones
+                </h3>
+                <div class="flex items-center mb-2">
+                  <div class="flex items-center text-yellow-400">
+                    <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                    <span class="ml-1 text-sm text-gray-300">4.5</span>
+                  </div>
+                  <span class="text-sm text-gray-400 ml-2">Electronics</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-lg font-bold text-white">$199.99</span>
+                  <button
+                    class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div
+              class="bg-gray-800 rounded-lg overflow-hidden hover:ring-2 hover:ring-purple-500 transition-all"
+            >
+              <img
+                src="https://cdn.pixabay.com/photo/2016/03/27/07/21/lights-1282268_1280.jpg"
+                alt="Mechanical Keyboard"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-white mb-2">
+                  Mechanical Keyboard
+                </h3>
+                <div class="flex items-center mb-2">
+                  <div class="flex items-center text-yellow-400">
+                    <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                    <span class="ml-1 text-sm text-gray-300">4.8</span>
+                  </div>
+                  <span class="text-sm text-gray-400 ml-2">Electronics</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-lg font-bold text-white">$159.99</span>
+                  <button
+                    class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div
+              class="bg-gray-800 rounded-lg overflow-hidden hover:ring-2 hover:ring-purple-500 transition-all"
+            >
+              <img
+                src="https://cdn.pixabay.com/photo/2022/03/09/23/57/man-7058876_1280.jpg"
+                alt="Designer T-Shirt"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-white mb-2">
+                  Designer T-Shirt
+                </h3>
+                <div class="flex items-center mb-2">
+                  <div class="flex items-center text-yellow-400">
+                    <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                    <span class="ml-1 text-sm text-gray-300">4.2</span>
+                  </div>
+                  <span class="text-sm text-gray-400 ml-2">Clothing</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-lg font-bold text-white">$29.99</span>
+                  <button
+                    class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card 4 -->
+            <div
+              class="bg-gray-800 rounded-lg overflow-hidden hover:ring-2 hover:ring-purple-500 transition-all"
+            >
+              <img
+                src="https://cdn.pixabay.com/photo/2016/03/27/07/21/lights-1282268_1280.jpg"
+                alt="Mechanical Keyboard"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-white mb-2">
+                  Mechanical Keyboard
+                </h3>
+                <div class="flex items-center mb-2">
+                  <div class="flex items-center text-yellow-400">
+                    <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                    <span class="ml-1 text-sm text-gray-300">4.8</span>
+                  </div>
+                  <span class="text-sm text-gray-400 ml-2">Electronics</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-lg font-bold text-white">$159.99</span>
+                  <button
+                    class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- More product cards... -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
