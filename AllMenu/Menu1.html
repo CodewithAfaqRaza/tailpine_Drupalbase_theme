@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../output.css" />
+    <link rel="stylesheet" href="output.css" />
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
@@ -14,7 +14,7 @@
     <div class="container max-w-[1920px] w-full">
       <section
         x-data="{ mobileNavOpen: false }"
-        class="overflow-hidden shadow-lg shadow-gray-200"
+        class="overflow-hidden shadow-lg"
       >
         <!-- Dark gray background -->
         <nav class="mx-4 py-6">
@@ -24,53 +24,53 @@
                 <a href="#" class="inline-block">
                   <img class="h-5 md:h-8" src="ALogo.svg" alt="LOGO" />
                 </a>
-                <ul class="hidden lg:flex ml-10 gap-5 text-gray-800">
+                <ul class="hidden lg:flex ml-10 gap-5 text-body">
                   <li class="mr-8">
                     <a
-                      class="inline-block hover:text-gray-700 font-medium"
+                      class="inline-block hover:hover:text-body/80 font-medium"
                       href="#"
                       >About us</a
                     >
                   </li>
                   <li class="mr-8">
                     <a
-                      class="inline-block hover:text-gray-700 font-medium"
+                      class="inline-block hover:hover:text-body/80 font-medium"
                       href="#"
                       >Team</a
                     >
                   </li>
                   <li class="mr-8">
                     <a
-                      class="inline-block hover:text-gray-700 font-medium"
+                      class="inline-block hover:hover:text-body/80 font-medium"
                       href="#"
                       >Solutions</a
                     >
                   </li>
                   <li>
                     <a
-                      class="inline-block hover:text-gray-700 font-medium"
+                      class="inline-block hover:hover:text-body/80 font-medium"
                       href="#"
                       >Blog</a
                     >
                   </li>
                 </ul>
               </div>
-              <div class="flex items-center justify-end text-gray-800">
+              <div class="flex items-center justify-end text-body">
                 <div class="hidden md:block">
                   <a
                     href="#"
-                    class="inline-flex py-3 px-6 mr-4 items-center justify-center text-sm font-medium hover:text-white bg-gray-200 hover:border-gray-300 hover:bg-gray-700 rounded-full transition duration-200"
+                    class="inline-flex py-3 px-6 mr-4 items-center justify-center text-sm font-medium hover:text-white bg-gray-200 hover:border-gray-300 hover:bg-body rounded-full transition duration-200"
                     >Login</a
                   >
                   <a
                     href="#"
-                    class="inline-flex py-3 px-6 items-center justify-center text-sm font-medium bg-gray-200 hover:border-white hover:text-white hover:bg-gray-700 rounded-full transition duration-200"
+                    class="inline-flex py-3 px-6 items-center justify-center text-sm font-medium bg-gray-200 hover:border-white hover:text-white hover:bg-body rounded-full transition duration-200"
                     >Get in touch</a
                   >
                 </div>
                 <button
                   x-on:click="mobileNavOpen = !mobileNavOpen"
-                  class="md:hidden text-black hover:text-gray-700"
+                  class="md:hidden text-black hover:hover:text-body/80"
                 >
                   <svg
                     width="32"
